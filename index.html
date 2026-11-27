@@ -1,0 +1,2350 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주식회사 페이브 (PAVE) | 자연의 포근함과 안전을 설계하는 친환경 포장재</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Pretendard, Noto Serif KR & Cormorant Garamond -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                        serif: ['"Noto Serif KR"', 'serif'],
+                        editorial: ['"Cormorant Garamond"', '"Noto Serif KR"', 'serif'],
+                    },
+                    colors: {
+                        core: {
+                            bg: '#FAF8F5',
+                            bgSub: '#F4F1EA',
+                            sageLight: '#EBF3EE',
+                            sageMist: '#DCECE3',
+                            sage: '#2D5A43',
+                            forest: '#487A5E',
+                            sand: '#D99B52',
+                            sandLight: '#F9EFE2',
+                            coral: '#D95B43',
+                            sky: '#3A82B5',
+                            charcoal: '#262A28',
+                            muted: '#5E6662',
+                            border: '#E5E0D8'
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 12px 40px -15px rgba(45, 90, 67, 0.09)',
+                        'soft-lg': '0 24px 60px -15px rgba(45, 90, 67, 0.16)',
+                        'float': '0 14px 35px -10px rgba(38, 42, 40, 0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #FAF8F5;
+            color: #262A28;
+            overflow-x: hidden;
+            word-break: keep-all;
+        }
+        .arch-frame {
+            border-radius: 240px 240px 32px 32px;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        @keyframes floatDelayed {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+        }
+        .animate-float-slow { animation: floatSlow 5.5s ease-in-out infinite; }
+        .animate-float-delayed { animation: floatDelayed 6.5s ease-in-out 1.5s infinite; }
+
+        .layer-pill {
+            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+        }
+        .layer-pill:hover {
+            transform: translateX(8px);
+            box-shadow: 0 10px 25px -8px rgba(45, 90, 67, 0.18);
+        }
+        .pattern-card.active {
+            border-color: #2D5A43;
+            background-color: #EBF3EE;
+            box-shadow: 0 10px 24px -8px rgba(45, 90, 67, 0.22);
+            transform: translateY(-2px);
+        }
+        input[type="range"] {
+            -webkit-appearance: none;
+            background: transparent;
+        }
+        input[type="range"]::-webkit-slider-runnable-track {
+            height: 8px;
+            border-radius: 999px;
+            background: #DCECE3;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: #2D5A43;
+            border: 3px solid #FAF8F5;
+            box-shadow: 0 3px 10px rgba(45, 90, 67, 0.35);
+            margin-top: -7px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .ba-container {
+            user-select: none;
+            touch-action: pan-y;
+        }
+        /* 실사 이미지 로딩 전 스타일리시 폴백 프레임 */
+        .photo-fallback-box {
+            background: linear-gradient(145deg, #EBF3EE 0%, #F4F1EA 52%, #F9EFE2 100%);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-core-sage selection:text-white">
+
+    <!-- ==================== 1. 글래스모피즘 플로팅 내비게이션 ==================== -->
+    <header class="sticky top-3 z-50 px-4 sm:px-6 lg:px-8 transition-all duration-300">
+        <div class="max-w-7xl mx-auto bg-[#FAF8F5]/88 backdrop-blur-md border border-core-border/80 rounded-full px-5 sm:px-8 h-16 sm:h-[72px] flex items-center justify-between shadow-float">
+            <!-- 로고 -->
+            <a href="#top" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-core-sage to-core-forest text-[#FAF8F5] flex items-center justify-center shadow-sm group-hover:scale-105 transition">
+                    <svg viewBox="0 0 24 24" class="w-5 h-5 fill-none stroke-current" stroke-width="1.8">
+                        <path d="M12 21C12 13 6 9 3 9C3 15 7 21 12 21Z" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 21C12 11 17 5 21 4C21 12 17 21 12 21Z" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="flex items-baseline gap-2">
+                    <span class="font-serif text-lg sm:text-xl font-bold tracking-tight text-core-charcoal">(주)페이브</span>
+                    <span class="font-editorial italic text-sm sm:text-base font-semibold text-core-forest tracking-wider">PAVE</span>
+                </div>
+            </a>
+
+            <!-- 데스크톱 내비게이션 메뉴 -->
+            <nav class="hidden lg:flex items-center space-x-7 text-[15px] font-medium text-core-muted">
+                <a href="#brand-story" class="hover:text-core-sage transition py-2">브랜드 스토리</a>
+                <a href="#solutions" class="hover:text-core-sage transition py-2">제품·실사시방</a>
+                <a href="#portfolio" class="hover:text-core-sage transition py-2">실사 시공사례</a>
+                <a href="#g2b-calculator" class="hover:text-core-sage transition py-2">나라장터 견적</a>
+                <a href="#credentials" class="hover:text-core-sage transition py-2">인증·연혁</a>
+            </nav>
+
+            <!-- 우측 문의하기 CTA -->
+            <div class="flex items-center gap-2">
+                <a href="#contact" class="bg-core-sage hover:bg-core-forest text-white text-xs sm:text-sm font-semibold px-4 sm:px-5 py-2.5 rounded-full shadow-sm transition flex items-center gap-1.5">
+                    <span>견적·상담 문의</span>
+                    <i class="fa-solid fa-arrow-right text-[11px]"></i>
+                </a>
+                <button id="mobile-menu-btn" aria-label="메뉴 열기" class="lg:hidden w-10 h-10 rounded-full flex items-center justify-center text-core-charcoal hover:bg-core-bgSub transition">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- 모바일 드롭다운 메뉴 -->
+        <div id="mobile-menu" class="hidden lg:hidden max-w-7xl mx-auto mt-2 bg-[#FAF8F5]/95 backdrop-blur-md border border-core-border rounded-3xl p-5 shadow-soft-lg">
+            <div class="flex flex-col space-y-2 text-[15px] font-medium text-core-charcoal">
+                <a href="#brand-story" class="mobile-nav-link px-4 py-3 rounded-2xl hover:bg-core-sageLight hover:text-core-sage transition">브랜드 스토리 & 선택 이유</a>
+                <a href="#solutions" class="mobile-nav-link px-4 py-3 rounded-2xl hover:bg-core-sageLight hover:text-core-sage transition">핵심 제품 & 3D 단면도</a>
+                <a href="#portfolio" class="mobile-nav-link px-4 py-3 rounded-2xl hover:bg-core-sageLight hover:text-core-sage transition">실사 시공사례 갤러리</a>
+                <a href="#g2b-calculator" class="mobile-nav-link px-4 py-3 rounded-2xl hover:bg-core-sageLight hover:text-core-sage transition">조달청 나라장터 견적 계산</a>
+                <a href="#credentials" class="mobile-nav-link px-4 py-3 rounded-2xl hover:bg-core-sageLight hover:text-core-sage transition">공식 인증현황 & 연혁</a>
+                <a href="#contact" class="mobile-nav-link px-4 py-3 rounded-2xl bg-core-sage text-white text-center font-semibold mt-1">상담 및 견적 문의하기</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== 2. 실사 사진 아치형 멀티 콜라주 히어로 섹션 ==================== -->
+    <section id="top" class="relative pt-14 pb-20 lg:pt-20 lg:pb-28 overflow-hidden">
+        <!-- 오가닉 오로라 블러 배경 -->
+        <div class="absolute top-6 -left-24 w-[480px] h-[480px] rounded-full bg-core-sageLight/90 blur-3xl pointer-events-none"></div>
+        <div class="absolute top-24 right-1/4 w-[360px] h-[360px] rounded-full bg-[#F9EFE2]/95 blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-6 -right-16 w-[420px] h-[420px] rounded-full bg-[#E3EFF7]/80 blur-3xl pointer-events-none"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                <!-- 좌측 감성 에디토리얼 카피 -->
+                <div class="lg:col-span-6 space-y-7 reveal visible">
+                    <div class="inline-flex flex-wrap items-center gap-2">
+                        <span class="px-3.5 py-1.5 rounded-full bg-core-sageLight text-core-sage text-xs font-semibold tracking-wide flex items-center gap-1.5 border border-core-sageMist">
+                            <span class="w-1.5 h-1.5 rounded-full bg-core-sage animate-pulse"></span>
+                            조달청 나라장터 종합쇼핑몰 등록업체
+                        </span>
+                        <span class="px-3.5 py-1.5 rounded-full bg-core-sandLight text-[#9A6728] text-xs font-semibold tracking-wide border border-[#EED7B5]">
+                            친환경 인증 · 전문건설업(도장) 보유
+                        </span>
+                    </div>
+
+                    <div class="space-y-3">
+                        <p class="font-editorial italic text-lg sm:text-xl text-core-forest font-semibold tracking-wide">
+                            Vibrant Safety, Gentle Nature — Eco Paving Artistry
+                        </p>
+                        <h1 class="font-serif text-3xl sm:text-4xl lg:text-[44px] font-bold text-core-charcoal leading-[1.3] tracking-tight">
+                            회색 도심에 생기를 입히고,<br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-core-sage via-core-forest to-[#B87A35]">자연의 포근함과 안전</span>을<br>
+                            정교하게 설계합니다.
+                        </h1>
+                    </div>
+
+                    <p class="text-base sm:text-[17px] text-core-muted leading-relaxed">
+                        친환경 MMA수지 미끄럼방지 포장재부터 다채로운 컬러의 무독성 EPDM 놀이터 탄성포장재까지 — 
+                        중간 유통 없는 <strong class="text-core-charcoal font-semibold">직영 제조·시공</strong>으로 
+                        <strong class="text-core-sage font-semibold">최대 25% 합리적인 비용</strong>과 <strong class="text-core-charcoal font-semibold">10년 품질보증</strong>을 약속합니다.
+                    </p>
+
+                    <!-- CTA 버튼 그룹 -->
+                    <div class="flex flex-wrap items-center gap-3 pt-1">
+                        <a href="#portfolio" class="px-7 py-4 rounded-full bg-core-sage hover:bg-core-forest text-white font-semibold text-sm sm:text-base shadow-soft-lg transition flex items-center gap-2.5">
+                            <i class="fa-solid fa-camera text-core-sand"></i>
+                            <span>실사 시공사례 갤러리</span>
+                        </a>
+                        <a href="#g2b-calculator" class="px-6 py-4 rounded-full bg-white hover:bg-core-bgSub text-core-charcoal border border-core-border font-semibold text-sm sm:text-base transition flex items-center gap-2 shadow-xs">
+                            <i class="fa-solid fa-calculator text-core-sage"></i>
+                            <span>나라장터 견적 계산</span>
+                        </a>
+                    </div>
+
+                    <!-- 핵심 지표 3종 뱃지 -->
+                    <div class="grid grid-cols-3 gap-3 sm:gap-5 pt-5 border-t border-core-border/80">
+                        <div>
+                            <span class="text-xs text-core-muted block mb-1">직영 제조 · 납품 절감</span>
+                            <div class="font-serif text-xl sm:text-2xl font-bold text-core-sage">최대 25%<span class="text-sm font-sans font-semibold text-core-sand ml-1">↓</span></div>
+                        </div>
+                        <div>
+                            <span class="text-xs text-core-muted block mb-1">책임 시공 품질경영</span>
+                            <div class="font-serif text-xl sm:text-2xl font-bold text-core-charcoal">최대 10년<span class="text-xs font-sans font-medium text-core-muted ml-1">보증</span></div>
+                        </div>
+                        <div>
+                            <span class="text-xs text-core-muted block mb-1">업계 최초 사후관리</span>
+                            <div class="font-serif text-xl sm:text-2xl font-bold text-core-forest">매년 정기<span class="text-xs font-sans font-medium text-core-muted ml-1">점검</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 우측 실사 사진 아치형 쇼케이스 & 멀티 플로팅 콜라주 -->
+                <div class="lg:col-span-6 reveal visible">
+                    <div class="relative mx-auto max-w-[500px] pt-4 pb-8 px-4 sm:px-8">
+                        
+                        <!-- 메인 아치형 실사 쇼케이스 카드 -->
+                        <div class="arch-frame bg-gradient-to-b from-white via-[#F6F9F7] to-[#F4F1EA] p-4 sm:p-5 border-2 border-white shadow-soft-lg relative z-10">
+                            <div class="relative overflow-hidden rounded-t-[200px] rounded-b-3xl aspect-[4/3.6] bg-core-sageLight group">
+                                <!-- 실사 <img> 슬롯 -->
+                                <div id="hero-visual-slot" class="w-full h-full"></div>
+
+                                <!-- 좌우 슬라이드 화살표 -->
+                                <button type="button" onclick="prevHeroSlide()" aria-label="이전 실사" class="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/90 hover:bg-white text-core-charcoal shadow-md flex items-center justify-center transition">
+                                    <i class="fa-solid fa-chevron-left text-xs"></i>
+                                </button>
+                                <button type="button" onclick="nextHeroSlide()" aria-label="다음 실사" class="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/90 hover:bg-white text-core-charcoal shadow-md flex items-center justify-center transition">
+                                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                                </button>
+
+                                <!-- 하단 실사 캡션 오버레이 -->
+                                <div class="absolute bottom-3 left-3 right-3 z-20 bg-white/92 backdrop-blur-md rounded-2xl px-4 py-2.5 border border-white/90 flex items-center justify-between shadow-sm">
+                                    <div>
+                                        <span id="hero-slide-tag" class="text-[11px] font-bold text-core-sage block">어린이보호구역 · 스텐실 공법 (p01_04.jpg)</span>
+                                        <span id="hero-slide-title" class="text-xs sm:text-sm font-bold text-core-charcoal">유치원·초등학교 앞 해님 브릭 스쿨존 실사</span>
+                                    </div>
+                                    <div class="flex gap-1.5" id="hero-slide-dots">
+                                        <button type="button" onclick="setHeroSlide(0)" class="w-5 h-2.5 rounded-full bg-core-sage transition"></button>
+                                        <button type="button" onclick="setHeroSlide(1)" class="w-2.5 h-2.5 rounded-full bg-core-sage/30 transition"></button>
+                                        <button type="button" onclick="setHeroSlide(2)" class="w-2.5 h-2.5 rounded-full bg-core-sage/30 transition"></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 아치 하단 표준인증 요약 바 -->
+                            <div class="mt-4 bg-core-bg/90 rounded-2xl p-3.5 border border-core-border/70 grid grid-cols-2 gap-3 text-xs">
+                                <div class="border-r border-core-border pr-2">
+                                    <span class="text-[11px] text-core-muted block">미끄럼방지 포장재</span>
+                                    <span class="font-bold text-core-sage">SPS-F KTS-1102-1890</span>
+                                </div>
+                                <div class="pl-1">
+                                    <span class="text-[11px] text-core-muted block">어린이놀이시설 탄성포장재</span>
+                                    <span class="font-bold text-[#9A6728]">SPS-KSSFIA1-1944</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 플로팅 미니 실사 카드 1 (우측 상단: p01_01.jpg 육각 레드·그린 보행로) -->
+                        <div onclick="setHeroSlide(2)" class="cursor-pointer hidden sm:block w-36 bg-white/95 backdrop-blur-md p-2 rounded-2xl shadow-soft-lg border border-white absolute -top-2 -right-3 z-20 animate-float-slow hover:scale-105 transition">
+                            <div class="w-full h-24 rounded-xl overflow-hidden bg-core-sageLight" id="mini-card-hex"></div>
+                            <div class="pt-1.5 px-1">
+                                <span class="text-[10px] font-bold text-core-coral block">p01_01.jpg</span>
+                                <span class="text-[11px] font-bold text-core-charcoal">핵스타일 보행로</span>
+                            </div>
+                        </div>
+
+                        <!-- 플로팅 미니 실사 카드 2 (좌측 하단: p01_02.jpg 컬러 어린이놀이터) -->
+                        <div onclick="setHeroSlide(1)" class="cursor-pointer hidden sm:block w-40 bg-white/95 backdrop-blur-md p-2 rounded-2xl shadow-soft-lg border border-white absolute -bottom-2 -left-4 z-20 animate-float-delayed hover:scale-105 transition">
+                            <div class="w-full h-24 rounded-xl overflow-hidden bg-core-sageLight" id="mini-card-play"></div>
+                            <div class="pt-1.5 px-1">
+                                <span class="text-[10px] font-bold text-core-sky block">p01_02.jpg</span>
+                                <span class="text-[11px] font-bold text-core-charcoal">유선형 컬러 놀이터</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 부드러운 곡선 웨이브 디바이더 -->
+    <div class="w-full overflow-hidden leading-none text-core-bgSub">
+        <svg viewBox="0 0 1440 56" class="w-full h-8 sm:h-12 fill-current" preserveAspectRatio="none">
+            <path d="M0,32 C360,68 1080,-8 1440,32 L1440,56 L0,56 Z"></path>
+        </svg>
+    </div>
+
+    <!-- ==================== 3. 브랜드 스토리 & 선택해야 하는 4가지 이유 ==================== -->
+    <section id="brand-story" class="py-24 lg:py-32 bg-core-bgSub">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+            
+            <!-- 3-1. 브랜드 스토리 & 대표 인사말 + 실사 현장 포토 카드 -->
+            <div class="grid lg:grid-cols-12 gap-12 items-center reveal">
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="font-editorial italic text-lg text-core-forest font-semibold tracking-wider block">
+                        Our Philosophy & Greeting
+                    </span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-core-charcoal leading-snug">
+                        사람과 자연이 함께 숨 쉬는<br>
+                        <span class="text-core-sage">가장 안전한 바닥을 만듭니다</span>
+                    </h2>
+                    <div class="space-y-4 text-core-muted text-[15.5px] leading-[1.8]">
+                        <p>
+                            저희 <strong class="text-core-charcoal font-semibold">주식회사 페이브</strong>는 그동안 쌓아온 경험과 연구를 바탕으로 
+                            미끄럼방지 포장재, 도막형 바닥재, 어린이놀이시설 탄성포장재, 체육시설 탄성포장재 분야에서 그 진가를 인정받고 있습니다.
+                        </p>
+                        <p>
+                            항상 사용자의 건강과 환경을 먼저 생각하는 친환경 기업으로서, 
+                            차가운 아스팔트와 회색 도심 위에 페이브만의 따뜻한 디자인과 안전 기술을 더해 
+                            거리와 놀이공간에 생기와 활력을 불어넣고 있습니다.
+                        </p>
+                        <p>
+                            정량·정품 자재 원칙과 성실한 책임 시공으로 보내주신 성원에 보답하며, 
+                            언제나 믿고 맡길 수 있는 든든한 파트너가 되겠습니다.
+                        </p>
+                    </div>
+                    <div class="pt-2 flex items-center justify-between flex-wrap gap-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-px bg-core-sage"></div>
+                            <div>
+                                <span class="text-xs text-core-muted block">주식회사 페이브 대표이사</span>
+                                <span class="font-serif text-xl font-bold text-core-charcoal tracking-widest">박 정 남</span>
+                            </div>
+                        </div>
+                        <!-- 카달로그 3p 실사 2컷 미니 프리뷰 -->
+                        <div class="flex gap-2.5">
+                            <div class="w-24 h-16 rounded-2xl overflow-hidden border border-white shadow-sm" id="about-photo-1"></div>
+                            <div class="w-24 h-16 rounded-2xl overflow-hidden border border-white shadow-sm" id="about-photo-2"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 우측 기업 정보 요약 카드 -->
+                <div class="lg:col-span-6 bg-[#FAF8F5] rounded-[32px] p-7 sm:p-10 border border-core-border shadow-soft">
+                    <div class="flex items-center justify-between mb-6 pb-4 border-b border-core-border">
+                        <div>
+                            <span class="font-editorial italic text-sm text-core-forest font-semibold">Company Profile</span>
+                            <h3 class="font-serif text-xl font-bold text-core-charcoal">주식회사 페이브 기업 개요</h3>
+                        </div>
+                        <span class="px-3.5 py-1 rounded-full bg-core-sageLight text-core-sage text-xs font-semibold">조달청 등록기업</span>
+                    </div>
+                    <dl class="divide-y divide-core-border/70 text-sm">
+                        <div class="py-3.5 grid grid-cols-3 gap-2">
+                            <dt class="text-core-muted font-medium">회사명 · 대표자</dt>
+                            <dd class="col-span-2 font-semibold text-core-charcoal">주식회사 페이브 / 박정남</dd>
+                        </div>
+                        <div class="py-3.5 grid grid-cols-3 gap-2">
+                            <dt class="text-core-muted font-medium">본사 / 사업장</dt>
+                            <dd class="col-span-2 text-core-charcoal">강원특별자치도 화천군 하남면 공단길 80-40 (원천농공단지 내)</dd>
+                        </div>
+                        <div class="py-3.5 grid grid-cols-3 gap-2">
+                            <dt class="text-core-muted font-medium">제조 공장</dt>
+                            <dd class="col-span-2 text-core-charcoal">경기도 남양주시 화도읍 비룡로379번길 19-7 1동 1호</dd>
+                        </div>
+                        <div class="py-3.5 grid grid-cols-3 gap-2">
+                            <dt class="text-core-muted font-medium">주요 제품</dt>
+                            <dd class="col-span-2 text-core-charcoal font-medium">미끄럼방지 포장재, 도막형 바닥재, 어린이놀이시설·체육시설 탄성포장재</dd>
+                        </div>
+                        <div class="py-3.5 grid grid-cols-3 gap-2">
+                            <dt class="text-core-muted font-medium">주 서비스</dt>
+                            <dd class="col-span-2 text-core-muted leading-relaxed">어린이·노인보호구역, 광장·도로·보행로, 학교운동장·공원 산책로 및 놀이터 조성·리모델링 설계</dd>
+                        </div>
+                        <div class="py-3.5 grid grid-cols-3 gap-2">
+                            <dt class="text-core-muted font-medium">보유 면허</dt>
+                            <dd class="col-span-2 text-core-charcoal font-medium">전문건설업면허 (도장공사업) · 공장등록증 (남양주시)</dd>
+                        </div>
+                        <div class="py-3.5 grid grid-cols-3 gap-2">
+                            <dt class="text-core-muted font-medium">인증 현황</dt>
+                            <dd class="col-span-2 text-core-sage font-semibold text-xs leading-relaxed">
+                                • SPS-F KTS-1102-1890 (미끄럼방지 포장재 / 도로교통안전기술협회)<br>
+                                • SPS-KSSFIA1-1944 (어린이놀이시설 탄성포장재 / 한국체육시설공업협회)
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+
+            <!-- 3-2. 페이브를 선택해야 하는 4가지 이유 -->
+            <div class="reveal">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <span class="font-editorial italic text-lg text-core-forest font-semibold tracking-wider block mb-2">
+                        Four Core Promises
+                    </span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-core-charcoal">
+                        (주)페이브를 선택해야 하는 4가지 이유
+                    </h2>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-[#EBF3EE] rounded-[28px] p-7 border border-[#DCECE3] shadow-soft flex flex-col justify-between hover:-translate-y-1.5 transition duration-300">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-12 h-12 rounded-2xl bg-core-sage text-white flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-seedling"></i>
+                                </div>
+                                <span class="font-editorial italic text-2xl font-bold text-core-sage/40">01</span>
+                            </div>
+                            <h3 class="font-serif text-xl font-bold text-core-charcoal mb-3">우수한 친환경 품질</h3>
+                            <p class="text-sm text-core-muted leading-relaxed mb-5">
+                                제품 개발과 품질 개선을 위해 끊임없이 연구합니다. 엄격한 시험을 통과한 친환경·기술표준 인증 자재만을 생산합니다.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-core-sage/15 space-y-1.5 text-xs font-semibold text-core-sage">
+                            <div>✓ 친환경 인증 · 기술표준 인증</div>
+                            <div>✓ 전사적 품질관리(TQM) 운영</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#F9EFE2] rounded-[28px] p-7 border border-[#F0DEC4] shadow-soft flex flex-col justify-between hover:-translate-y-1.5 transition duration-300">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-12 h-12 rounded-2xl bg-core-sand text-white flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-hand-holding-heart"></i>
+                                </div>
+                                <span class="font-editorial italic text-2xl font-bold text-core-sand/50">02</span>
+                            </div>
+                            <h3 class="font-serif text-xl font-bold text-core-charcoal mb-3">거품 없는 직영 가격</h3>
+                            <p class="text-sm text-core-muted leading-relaxed mb-5">
+                                제조 공정 개선과 합리적 운영으로 품질은 최상으로 유지하되, 중간 딜러 없는 직영 영업·납품으로 <strong class="text-core-charcoal">타사 대비 최대 25% 경제적인 비용</strong>을 실현합니다.
+                            </p>
+                        </div>
+                        <div class="bg-white/75 rounded-2xl px-4 py-2.5 text-xs font-semibold text-[#9A6728] flex justify-between items-center">
+                            <span>직영 납품 절감률</span>
+                            <span class="font-serif text-base font-bold text-core-sage">최대 25% ↓</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#FAF8F5] rounded-[28px] p-7 border border-core-border shadow-soft flex flex-col justify-between hover:-translate-y-1.5 transition duration-300">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-12 h-12 rounded-2xl bg-core-forest text-white flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-clipboard-check"></i>
+                                </div>
+                                <span class="font-editorial italic text-2xl font-bold text-core-muted/30">03</span>
+                            </div>
+                            <h3 class="font-serif text-xl font-bold text-core-charcoal mb-3">완벽한 사후관리</h3>
+                            <p class="text-sm text-core-muted leading-relaxed mb-5">
+                                <strong class="text-core-charcoal">업계 최초로 매년 순회점검</strong>을 실시합니다. 스마트 현장 관리를 통해 주문부터 납품·유지관리 현황을 전산으로 기록해 즉시 안내합니다.
+                            </p>
+                        </div>
+                        <div class="bg-core-sageLight/75 rounded-2xl px-4 py-2.5 text-xs font-semibold text-core-sage flex justify-between items-center">
+                            <span>업계 최초 도입</span>
+                            <span class="font-bold">매년 정기 순회점검</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#EEF2F0] rounded-[28px] p-7 border border-[#DCE3DF] shadow-soft flex flex-col justify-between hover:-translate-y-1.5 transition duration-300">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-12 h-12 rounded-2xl bg-core-charcoal text-white flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-shield-heart"></i>
+                                </div>
+                                <span class="font-editorial italic text-2xl font-bold text-core-charcoal/30">04</span>
+                            </div>
+                            <h3 class="font-serif text-xl font-bold text-core-charcoal mb-3">정직 · 신의 · 성실</h3>
+                            <p class="text-sm text-core-muted leading-relaxed mb-5">
+                                페이브는 정직합니다. 설계 규격에 맞는 <strong class="text-core-charcoal">정량·정품 자재</strong>만을 사용하며 신의를 다하여 납품·시공하고 고객의 요구에 성실과 최선으로 응대합니다.
+                            </p>
+                        </div>
+                        <div class="bg-white/80 rounded-2xl px-4 py-2.5 text-xs font-semibold text-core-charcoal flex justify-between items-center">
+                            <span>책임 품질보증</span>
+                            <span class="font-serif font-bold text-core-sage">최대 10년</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 부드러운 반전 곡선 디바이더 -->
+    <div class="w-full overflow-hidden leading-none bg-core-bgSub text-core-bg">
+        <svg viewBox="0 0 1440 56" class="w-full h-8 sm:h-12 fill-current" preserveAspectRatio="none">
+            <path d="M0,24 C480,64 960,-12 1440,28 L1440,56 L0,56 Z"></path>
+        </svg>
+    </div>
+
+    <!-- ==================== 4. 핵심 제품 & 실사 시방 · 단면도 솔루션 ==================== -->
+    <section id="solutions" class="py-24 lg:py-32 bg-core-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+                <span class="font-editorial italic text-lg text-core-forest font-semibold tracking-wider block mb-2">
+                    Core Solutions & Real Field Specs
+                </span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-core-charcoal">
+                    핵심 제품 및 실사 시공 단면도
+                </h2>
+                <p class="mt-3 text-core-muted text-base">
+                    각 제품별 대표 현장 실사 사진과 친환경 원재료 특성, 층별 시공 단면도 및 한계하강높이 시뮬레이터를 확인하세요.
+                </p>
+            </div>
+
+            <!-- 필(Pill) 형태 탭 내비게이션 -->
+            <div class="flex flex-wrap justify-center gap-2.5 mb-12 reveal" role="tablist">
+                <button type="button" onclick="switchProductTab('prod1')" id="tab-prod1" class="prod-tab active px-5 py-3 rounded-full text-sm font-semibold transition bg-core-sage text-white shadow-soft">
+                    01. 미끄럼방지 포장재
+                </button>
+                <button type="button" onclick="switchProductTab('prod2')" id="tab-prod2" class="prod-tab px-5 py-3 rounded-full text-sm font-semibold transition bg-core-bgSub text-core-muted hover:text-core-charcoal border border-core-border/80">
+                    02. 미끄럼방지 스텐실
+                </button>
+                <button type="button" onclick="switchProductTab('prod3')" id="tab-prod3" class="prod-tab px-5 py-3 rounded-full text-sm font-semibold transition bg-core-bgSub text-core-muted hover:text-core-charcoal border border-core-border/80">
+                    03. 미끄럼방지 스탬프
+                </button>
+                <button type="button" onclick="switchProductTab('prod4')" id="tab-prod4" class="prod-tab px-5 py-3 rounded-full text-sm font-semibold transition bg-core-bgSub text-core-muted hover:text-core-charcoal border border-core-border/80">
+                    04. 어린이놀이시설 탄성포장재
+                </button>
+            </div>
+
+            <!-- ================= TAB 01: 미끄럼방지 포장재 ================= -->
+            <div id="panel-prod1" class="prod-panel bg-white rounded-[32px] p-6 sm:p-10 lg:p-12 border border-core-border shadow-soft">
+                <div class="grid lg:grid-cols-12 gap-10 items-start">
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="flex flex-wrap items-center gap-2.5">
+                            <span class="px-3.5 py-1 rounded-full bg-core-sageLight text-core-sage font-semibold text-xs">SPS-F KTS-1102-1890</span>
+                            <span class="text-xs text-core-muted font-medium">도로 · 주차장 · 어린이보호구역 · 노인보호구역 · 자전거도로</span>
+                        </div>
+                        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-core-charcoal">미끄럼방지 포장재 (친환경 MMA 수지)</h3>
+                        <p class="text-core-muted leading-relaxed text-[15.5px]">
+                            노면의 미끄럼저항이 낮아진 곳, 도로의 평면 및 종단선형이 불량하여 시인성이 높게 요구되는 도로, 
+                            미끄럼사고 다발지역인 교차로 및 어린이·노인보호구역에서 포장면의 미끄럼 저항력을 높여 
+                            운전자의 안전 운행과 보행자 및 시설물 보호에 탁월한 친환경 제품입니다.
+                        </p>
+
+                        <div class="grid sm:grid-cols-2 gap-4 pt-1">
+                            <div class="bg-core-bg rounded-2xl p-5 border border-core-border/70">
+                                <div class="text-xs font-bold text-core-sage mb-1">FEATURE 01</div>
+                                <h4 class="font-bold text-core-charcoal text-sm mb-1.5">친환경 MMA수지 원재료</h4>
+                                <p class="text-xs text-core-muted leading-relaxed">중금속 및 유해물질(T-VOCs, PAHs) 걱정이 없는 안전한 친환경 원재료로 시공합니다.</p>
+                            </div>
+                            <div class="bg-core-bg rounded-2xl p-5 border border-core-border/70">
+                                <div class="text-xs font-bold text-core-sage mb-1">FEATURE 02</div>
+                                <h4 class="font-bold text-core-charcoal text-sm mb-1.5">우수한 내구성 · 내후성</h4>
+                                <p class="text-xs text-core-muted leading-relaxed">내구성, 내마모성, 내열성, 내후성이 뛰어나 계절 변화와 차량 하중에도 수명이 깁니다.</p>
+                            </div>
+                            <div class="bg-core-bg rounded-2xl p-5 border border-core-border/70">
+                                <div class="text-xs font-bold text-core-sage mb-1">FEATURE 03</div>
+                                <h4 class="font-bold text-core-charcoal text-sm mb-1.5">빠른 경화 · 도심 통행불편 최소화</h4>
+                                <p class="text-xs text-core-muted leading-relaxed">경화속도가 빨라 유동인구가 많은 도심 구간 시공 시 도로 통제 불편을 최소화합니다.</p>
+                            </div>
+                            <div class="bg-core-bg rounded-2xl p-5 border border-core-border/70">
+                                <div class="text-xs font-bold text-core-sage mb-1">FEATURE 04</div>
+                                <h4 class="font-bold text-core-charcoal text-sm mb-1.5">폭넓은 현장 적용 & 경제성</h4>
+                                <p class="text-xs text-core-muted leading-relaxed">보행로, 자전거도로, 생활체육시설, 어린이보호구역, 급경사로 등 다양한 장소에 경제적으로 시공됩니다.</p>
+                            </div>
+                        </div>
+
+                        <!-- 조달청 등록 규격 요약 -->
+                        <div class="bg-core-sageLight/60 rounded-2xl p-5 border border-core-sageMist">
+                            <div class="text-xs font-bold text-core-sage mb-2.5 flex items-center gap-1.5">
+                                <i class="fa-solid fa-landmark"></i> 조달청 나라장터 등록 규격 (미끄럼방지 포장재)
+                            </div>
+                            <div class="space-y-2 text-xs">
+                                <div class="flex flex-wrap justify-between items-center bg-white/85 px-4 py-2.5 rounded-xl">
+                                    <span><strong class="text-core-sage mr-2">25531687</strong> PAVE-03, T3.0mm, 미끄럼방지 포장재 1종, 3T</span>
+                                    <span class="font-serif font-bold text-sm text-core-charcoal">28,900원/㎡</span>
+                                </div>
+                                <div class="flex flex-wrap justify-between items-center bg-white/85 px-4 py-2.5 rounded-xl">
+                                    <span><strong class="text-core-sage mr-2">25531688</strong> PAVE-06, T4.0mm, 미끄럼방지 포장재 1종, 4T</span>
+                                    <span class="font-serif font-bold text-sm text-core-charcoal">30,000원/㎡</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 우측 대표 실사 사진 + 제품 단면도 -->
+                    <div class="lg:col-span-5 bg-core-bgSub rounded-[28px] p-6 sm:p-7 border border-core-border space-y-5">
+                        <!-- 카달로그 7p/8p 대표 실사 사진 슬롯 -->
+                        <div class="rounded-2xl overflow-hidden h-52 border border-white shadow-sm relative" id="prod1-real-photo"></div>
+
+                        <div class="flex items-center justify-between pt-1">
+                            <div>
+                                <span class="font-editorial italic text-sm text-core-forest font-semibold">Cross-Section Layer</span>
+                                <h4 class="font-serif text-lg font-bold text-core-charcoal">제품 시공 단면도 (4중 구조)</h4>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-white text-core-sage text-xs font-bold border border-core-border">T = 3~4mm</span>
+                        </div>
+
+                        <div class="space-y-2.5">
+                            <div class="layer-pill rounded-2xl bg-core-coral text-white p-3.5 shadow-soft">
+                                <div class="flex justify-between items-center text-xs opacity-90 mb-0.5">
+                                    <span class="font-semibold">01 · 표층 마감</span>
+                                    <span class="font-bold">T = 3~4mm</span>
+                                </div>
+                                <div class="font-bold text-sm">MMA수지 미끄럼방지포장재</div>
+                            </div>
+                            <div class="layer-pill rounded-2xl bg-[#DCECE3] text-core-charcoal p-3 border border-core-sage/20 flex justify-between items-center text-xs font-bold">
+                                <span>02 · 전용 프라이머 (Primer)</span>
+                                <span class="text-core-sage font-semibold">콘크리트 마감시</span>
+                            </div>
+                            <div class="layer-pill rounded-2xl bg-white text-core-charcoal p-3 border border-core-border text-xs font-bold">
+                                03 · 콘크리트 / 아스콘 기층
+                            </div>
+                            <div class="layer-pill rounded-2xl bg-[#EFE9DF] text-core-charcoal p-3 border border-[#E0D6C6] text-xs font-bold">
+                                04 · 혼합골재 보조기층
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= TAB 02: 미끄럼방지 포장재 스텐실 ================= -->
+            <div id="panel-prod2" class="prod-panel hidden bg-white rounded-[32px] p-6 sm:p-10 lg:p-12 border border-core-border shadow-soft">
+                <div class="grid lg:grid-cols-12 gap-10 items-start">
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="flex flex-wrap items-center gap-2.5">
+                            <span class="px-3.5 py-1 rounded-full bg-core-sandLight text-[#9A6728] font-semibold text-xs">SPS-F KTS-1102-1890</span>
+                            <span class="text-xs text-core-muted font-medium">도로 · 주차장 · 테마거리 · 산책로 · 어린이보호구역</span>
+                        </div>
+                        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-core-charcoal">미끄럼방지 포장재 스텐실 (Stencil)</h3>
+                        <p class="text-core-muted leading-relaxed text-[15.5px]">
+                            아스팔트의 탁한 이미지와 흙색 일변도의 도심 이미지를 탈피하고자 아스콘, 투수콘, 콘크리트 등의 바닥 표면을 
+                            다양한 색상 및 문양지로 연출하여 기능과 실용성, 경관 디자인을 동시에 얻을 수 있는 최상의 마감재입니다.
+                        </p>
+
+                        <!-- 스텐실 8종 패턴 인터랙티브 미리보기 -->
+                        <div class="bg-core-bg rounded-3xl p-5 sm:p-6 border border-core-border">
+                            <div class="flex items-center justify-between mb-4">
+                                <h4 class="text-sm font-bold text-core-charcoal flex items-center gap-2">
+                                    <i class="fa-solid fa-swatchbook text-core-sage"></i>
+                                    <span>스텐실 패턴 8종 디자인 미리보기</span>
+                                </h4>
+                                <span class="text-xs text-core-muted">문양을 클릭해 보세요</span>
+                            </div>
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                                <button type="button" onclick="selectPattern('스퀘어타일', '정교한 격자무늬 타일 패턴으로 보행로와 광장에 깔끔하고 정돈된 도시 경관을 연출합니다.', this)" class="pattern-card active text-left p-2.5 rounded-2xl border border-core-border bg-white transition">
+                                    <svg viewBox="0 0 100 56" class="w-full h-14 rounded-xl bg-[#8C4A3C]">
+                                        <g stroke="#FAF8F5" stroke-width="1.8">
+                                            <line x1="25" y1="0" x2="25" y2="56"/><line x1="50" y1="0" x2="50" y2="56"/><line x1="75" y1="0" x2="75" y2="56"/>
+                                            <line x1="0" y1="19" x2="100" y2="19"/><line x1="0" y1="38" x2="100" y2="38"/>
+                                        </g>
+                                    </svg>
+                                    <div class="text-xs font-semibold text-core-charcoal mt-2 text-center">스퀘어타일</div>
+                                </button>
+                                <button type="button" onclick="selectPattern('자연석', '자연스러운 부정형 석재 문양으로 공원 산책로와 수변 테마거리에 자연친화적 감성을 더합니다.', this)" class="pattern-card text-left p-2.5 rounded-2xl border border-core-border bg-white transition">
+                                    <svg viewBox="0 0 100 56" class="w-full h-14 rounded-xl bg-[#5C6662]">
+                                        <g fill="none" stroke="#FAF8F5" stroke-width="1.8">
+                                            <path d="M0,16 L28,13 L42,0 M28,13 L35,32 L12,42 L0,38 M35,32 L62,26 L72,9 L55,0 M62,26 L85,36 L100,24 M35,32 L45,56 M85,36 L78,56"/>
+                                        </g>
+                                    </svg>
+                                    <div class="text-xs font-semibold text-core-charcoal mt-2 text-center">자연석</div>
+                                </button>
+                                <button type="button" onclick="selectPattern('키스톤', '부채꼴 방사형 석재 배열로 광장, 교차로, 진입부에 입체적인 디자인 포인트를 줍니다.', this)" class="pattern-card text-left p-2.5 rounded-2xl border border-core-border bg-white transition">
+                                    <svg viewBox="0 0 100 56" class="w-full h-14 rounded-xl bg-[#B57B45]">
+                                        <g fill="none" stroke="#FAF8F5" stroke-width="1.6">
+                                            <path d="M10,56 A42,42 0 0,1 90,56"/><path d="M22,56 A30,30 0 0,1 78,56"/><path d="M35,56 A17,17 0 0,1 65,56"/>
+                                            <line x1="50" y1="14" x2="50" y2="56"/><line x1="30" y1="18" x2="40" y2="56"/><line x1="70" y1="18" x2="60" y2="56"/>
+                                        </g>
+                                    </svg>
+                                    <div class="text-xs font-semibold text-core-charcoal mt-2 text-center">키스톤</div>
+                                </button>
+                                <button type="button" onclick="selectPattern('스퀘어2', '대·중·소 크기가 조화롭게 교차하는 모듈형 석재 패턴으로 세련된 건축적 감각을 구현합니다.', this)" class="pattern-card text-left p-2.5 rounded-2xl border border-core-border bg-white transition">
+                                    <svg viewBox="0 0 100 56" class="w-full h-14 rounded-xl bg-[#6B635B]">
+                                        <g fill="none" stroke="#FAF8F5" stroke-width="1.8">
+                                            <rect x="4" y="4" width="32" height="22"/><rect x="40" y="4" width="20" height="22"/><rect x="64" y="4" width="32" height="31"/>
+                                            <rect x="4" y="30" width="22" height="22"/><rect x="30" y="30" width="30" height="22"/><rect x="64" y="39" width="32" height="13"/>
+                                        </g>
+                                    </svg>
+                                    <div class="text-xs font-semibold text-core-charcoal mt-2 text-center">스퀘어2</div>
+                                </button>
+                                <button type="button" onclick="selectPattern('브릭', '전통 벽돌 조적 패턴으로 학교 앞, 어린이보호구역, 생활도로에 따뜻하고 친근한 분위기를 만듭니다.', this)" class="pattern-card text-left p-2.5 rounded-2xl border border-core-border bg-white transition">
+                                    <svg viewBox="0 0 100 56" class="w-full h-14 rounded-xl bg-[#C88A46]">
+                                        <g stroke="#FAF8F5" stroke-width="1.6">
+                                            <line x1="0" y1="14" x2="100" y2="14"/><line x1="0" y1="28" x2="100" y2="28"/><line x1="0" y1="42" x2="100" y2="42"/>
+                                            <line x1="25" y1="0" x2="25" y2="14"/><line x1="65" y1="0" x2="65" y2="14"/>
+                                            <line x1="45" y1="14" x2="45" y2="28"/><line x1="85" y1="14" x2="85" y2="28"/>
+                                            <line x1="25" y1="28" x2="25" y2="42"/><line x1="65" y1="28" x2="65" y2="42"/>
+                                            <line x1="45" y1="42" x2="45" y2="56"/><line x1="85" y1="42" x2="85" y2="56"/>
+                                        </g>
+                                    </svg>
+                                    <div class="text-xs font-semibold text-core-charcoal mt-2 text-center">브릭</div>
+                                </button>
+                                <button type="button" onclick="selectPattern('헤링본', '직각 교차 빗살무늬 패턴으로 하중 분산 효과가 뛰어나며 차량·보행 겸용 구간에 적합합니다.', this)" class="pattern-card text-left p-2.5 rounded-2xl border border-core-border bg-white transition">
+                                    <svg viewBox="0 0 100 56" class="w-full h-14 rounded-xl bg-[#545957]">
+                                        <g fill="none" stroke="#FAF8F5" stroke-width="1.6">
+                                            <path d="M0,18 L18,0 L36,18 L18,36 Z M18,36 L36,18 L54,36 L36,54 Z M36,18 L54,0 L72,18 L54,36 Z M54,36 L72,18 L90,36 L72,54 Z"/>
+                                        </g>
+                                    </svg>
+                                    <div class="text-xs font-semibold text-core-charcoal mt-2 text-center">헤링본</div>
+                                </button>
+                                <button type="button" onclick="selectPattern('핵스타일', '팔각·육각 기하학 타일 패턴으로 자전거도로 및 보행자 전용도로의 시인성과 디자인성을 극대화합니다.', this)" class="pattern-card text-left p-2.5 rounded-2xl border border-core-border bg-white transition">
+                                    <svg viewBox="0 0 100 56" class="w-full h-14 rounded-xl bg-[#2D5A43]">
+                                        <g fill="none" stroke="#FAF8F5" stroke-width="1.6">
+                                            <polygon points="18,6 32,6 40,17 32,28 18,28 10,17"/>
+                                            <polygon points="58,6 72,6 80,17 72,28 58,28 50,17"/>
+                                            <polygon points="38,28 52,28 60,39 52,50 38,50 30,39"/>
+                                            <polygon points="78,28 92,28 100,39 92,50 78,50 70,39"/>
+                                        </g>
+                                    </svg>
+                                    <div class="text-xs font-semibold text-core-charcoal mt-2 text-center">핵스타일</div>
+                                </button>
+                                <button type="button" onclick="selectPattern('유로피안', '유럽 광장 스타일의 아치형 부채꼴 코블스톤 문양으로 관광특구와 테마거리에 품격을 더합니다.', this)" class="pattern-card text-left p-2.5 rounded-2xl border border-core-border bg-white transition">
+                                    <svg viewBox="0 0 100 56" class="w-full h-14 rounded-xl bg-[#7A543E]">
+                                        <g fill="none" stroke="#FAF8F5" stroke-width="1.5">
+                                            <path d="M0,32 Q25,8 50,32 Q75,8 100,32"/>
+                                            <path d="M0,47 Q25,23 50,47 Q75,23 100,47"/>
+                                            <path d="M12,22 L12,39 M25,18 L25,35 M38,22 L38,39 M62,22 L62,39 M75,18 L75,35 M88,22 L88,39"/>
+                                        </g>
+                                    </svg>
+                                    <div class="text-xs font-semibold text-core-charcoal mt-2 text-center">유로피안</div>
+                                </button>
+                            </div>
+                            <div class="mt-4 p-3.5 bg-white rounded-2xl border border-core-border text-xs text-core-muted flex items-center gap-2.5">
+                                <span class="px-3 py-1 rounded-full bg-core-sage text-white font-semibold shrink-0" id="selected-pattern-name">스퀘어타일</span>
+                                <span id="selected-pattern-desc">정교한 격자무늬 타일 패턴으로 보행로와 광장에 깔끔하고 정돈된 도시 경관을 연출합니다.</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-core-sandLight/70 rounded-2xl p-4 border border-[#F0DEC4] flex flex-wrap items-center justify-between gap-3">
+                            <div>
+                                <div class="text-xs font-bold text-[#9A6728]">G2B 식별번호: 25531686</div>
+                                <div class="text-sm font-bold text-core-charcoal">PAVE-04, T3.0mm, 미끄럼방지 포장재 1종, 스텐실, 3T</div>
+                            </div>
+                            <div class="font-serif text-xl font-bold text-core-sage">34,300원<span class="text-xs font-sans font-normal text-core-muted">/㎡</span></div>
+                        </div>
+                    </div>
+
+                    <!-- 우측 스텐실 대표 실사 + 6중 단면도 -->
+                    <div class="lg:col-span-5 bg-core-bgSub rounded-[28px] p-6 sm:p-7 border border-core-border space-y-5">
+                        <!-- 카달로그 10p/11p 스텐실 실사 사진 슬롯 -->
+                        <div class="rounded-2xl overflow-hidden h-48 border border-white shadow-sm relative" id="prod2-real-photo"></div>
+
+                        <div class="flex items-center justify-between pt-1">
+                            <div>
+                                <span class="font-editorial italic text-sm text-core-forest font-semibold">Stencil Structure</span>
+                                <h4 class="font-serif text-lg font-bold text-core-charcoal">스텐실 제품 단면도 (6중 구조)</h4>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-white text-core-sage text-xs font-bold border border-core-border">T = 3~4mm</span>
+                        </div>
+                        <div class="space-y-2 text-xs">
+                            <div class="layer-pill rounded-2xl bg-core-sand text-white p-3 font-semibold flex justify-between shadow-xs">
+                                <span>01. MMA 수지 미끄럼방지포장재 표층</span>
+                                <span>T = 3~4mm</span>
+                            </div>
+                            <div class="layer-pill rounded-2xl bg-white text-core-charcoal p-3 font-bold border border-core-border flex justify-between">
+                                <span>02. 스텐실 문양지 (줄눈 라인 형성)</span>
+                                <span class="text-core-sage">8종 패턴</span>
+                            </div>
+                            <div class="layer-pill rounded-2xl bg-core-sage text-white p-3 font-semibold flex justify-between">
+                                <span>03. MMA 수지 미끄럼방지포장재 베이스</span>
+                                <span>T = 1mm</span>
+                            </div>
+                            <div class="layer-pill rounded-2xl bg-[#DCECE3] text-core-charcoal p-2.5 font-semibold flex justify-between">
+                                <span>04. 전용 프라이머</span>
+                                <span class="text-core-sage">콘크리트 마감시</span>
+                            </div>
+                            <div class="layer-pill rounded-2xl bg-white text-core-charcoal p-2.5 font-semibold border border-core-border">
+                                05. 콘크리트 / 아스콘
+                            </div>
+                            <div class="layer-pill rounded-2xl bg-[#EFE9DF] text-core-charcoal p-2.5 font-semibold border border-[#E0D6C6]">
+                                06. 혼합골재
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= TAB 03: 미끄럼방지 포장재 스탬프 ================= -->
+            <div id="panel-prod3" class="prod-panel hidden bg-white rounded-[32px] p-6 sm:p-10 lg:p-12 border border-core-border shadow-soft">
+                <div class="grid lg:grid-cols-12 gap-10 items-start">
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="flex flex-wrap items-center gap-2.5">
+                            <span class="px-3.5 py-1 rounded-full bg-core-sageLight text-core-sage font-semibold text-xs">SPS-F KTS-1102-1890</span>
+                            <span class="text-xs text-core-muted font-medium">도로 · 주차장 · 테마거리 · 산책로 · 자전거도로</span>
+                        </div>
+                        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-core-charcoal">미끄럼방지 포장재 스탬프 (Stamp)</h3>
+                        <p class="text-core-muted leading-relaxed text-[15.5px]">
+                            신규 또는 기존 아스팔트의 탁한 이미지와 흙색 일변도의 도심 이미지를 탈피하고자 아스콘, 투수콘, 콘크리트 등의 
+                            바닥 표면에 <strong class="text-core-charcoal font-semibold">입체 스탬프 각인 공법</strong>으로 다양한 색상 및 질감을 연출하여 
+                            실제 석재·벽돌 블록과 같은 입체감과 미끄럼 저항 성능을 동시에 구현하는 친환경 마감재입니다.
+                        </p>
+
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div class="bg-core-bg rounded-2xl p-5 border border-core-border/70">
+                                <h4 class="font-bold text-core-charcoal text-sm mb-1.5 flex items-center gap-2">
+                                    <i class="fa-solid fa-cubes text-core-sage"></i> 입체 엠보싱 스탬프 각인
+                                </h4>
+                                <p class="text-xs text-core-muted leading-relaxed">전용 몰드로 바닥 표면에 입체 요철 홈을 각인하여 배수성과 미끄럼 저항력, 입체 경관 효과를 높입니다.</p>
+                            </div>
+                            <div class="bg-core-bg rounded-2xl p-5 border border-core-border/70">
+                                <h4 class="font-bold text-core-charcoal text-sm mb-1.5 flex items-center gap-2">
+                                    <i class="fa-solid fa-shield-halved text-core-sage"></i> 일체형 무줄눈 내구성
+                                </h4>
+                                <p class="text-xs text-core-muted leading-relaxed">개별 블록 포장과 달리 침하·들뜸·잡초 발생이 없으며 균열과 탈색에 강한 수명을 자랑합니다.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-core-bg rounded-2xl p-5 border border-core-border">
+                            <div class="text-xs font-bold text-core-charcoal mb-3">적용 가능 스탬프 각인 패턴 (6종)</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3.5 py-1.5 rounded-full bg-white border border-core-border text-xs font-semibold text-core-charcoal">스퀘어타일</span>
+                                <span class="px-3.5 py-1.5 rounded-full bg-white border border-core-border text-xs font-semibold text-core-charcoal">자연석</span>
+                                <span class="px-3.5 py-1.5 rounded-full bg-white border border-core-border text-xs font-semibold text-core-charcoal">스퀘어2</span>
+                                <span class="px-3.5 py-1.5 rounded-full bg-white border border-core-border text-xs font-semibold text-core-charcoal">브릭</span>
+                                <span class="px-3.5 py-1.5 rounded-full bg-white border border-core-border text-xs font-semibold text-core-charcoal">헤링본</span>
+                                <span class="px-3.5 py-1.5 rounded-full bg-white border border-core-border text-xs font-semibold text-core-charcoal">유로피안</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-core-sageLight/70 rounded-2xl p-4 border border-core-sageMist flex flex-wrap items-center justify-between gap-3">
+                            <div>
+                                <div class="text-xs font-bold text-core-sage">G2B 식별번호: 25531685</div>
+                                <div class="text-sm font-bold text-core-charcoal">PAVE-05, T3.0mm, 미끄럼방지 포장재 1종, 스탬프, 3T</div>
+                            </div>
+                            <div class="font-serif text-xl font-bold text-core-sage">39,700원<span class="text-xs font-sans font-normal text-core-muted">/㎡</span></div>
+                        </div>
+                    </div>
+
+                    <!-- 우측 스탬프 대표 실사 + 단면도 -->
+                    <div class="lg:col-span-5 bg-core-bgSub rounded-[28px] p-6 sm:p-7 border border-core-border space-y-5">
+                        <!-- 카달로그 13p/14p 스탬프 실사 사진 슬롯 -->
+                        <div class="rounded-2xl overflow-hidden h-52 border border-white shadow-sm relative" id="prod3-real-photo"></div>
+
+                        <div class="flex items-center justify-between pt-1">
+                            <div>
+                                <span class="font-editorial italic text-sm text-core-forest font-semibold">Stamp Structure</span>
+                                <h4 class="font-serif text-lg font-bold text-core-charcoal">스탬프 제품 단면도 (4중 구조)</h4>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-white text-core-sage text-xs font-bold border border-core-border">T = 3~4mm</span>
+                        </div>
+
+                        <div class="space-y-2.5">
+                            <div class="layer-pill rounded-2xl bg-core-forest text-white p-3.5 shadow-soft">
+                                <div class="flex justify-between items-center text-xs opacity-90 mb-0.5">
+                                    <span class="font-semibold">01 · 표층 마감</span>
+                                    <span class="font-bold text-[#F3D39E]">T = 3~4mm</span>
+                                </div>
+                                <div class="font-bold text-sm">MMA수지 미끄럼방지포장재 표층</div>
+                            </div>
+                            <div class="layer-pill rounded-2xl bg-[#DCECE3] text-core-charcoal p-3 border border-core-sage/20 text-xs font-bold">
+                                02 · 스탬프 각인 (입체 몰드 성형)
+                            </div>
+                            <div class="layer-pill rounded-2xl bg-white text-core-charcoal p-3 border border-core-border text-xs font-bold">
+                                03 · 아스콘 포장 기층
+                            </div>
+                            <div class="layer-pill rounded-2xl bg-[#EFE9DF] text-core-charcoal p-3 border border-[#E0D6C6] text-xs font-bold">
+                                04 · 혼합골재 보조기층
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= TAB 04: 어린이놀이시설 탄성포장재 ================= -->
+            <div id="panel-prod4" class="prod-panel hidden bg-white rounded-[32px] p-6 sm:p-10 lg:p-12 border border-core-border shadow-soft">
+                <div class="grid lg:grid-cols-12 gap-10 items-start">
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="flex flex-wrap items-center gap-2.5">
+                            <span class="px-3.5 py-1 rounded-full bg-core-sageLight text-core-sage font-semibold text-xs">SPS-KSSFIA1-1944</span>
+                            <span class="text-xs text-core-muted font-medium">어린이놀이터 · 공원 · 유아숲체험원 · 체육시설</span>
+                        </div>
+                        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-core-charcoal">어린이놀이시설 탄성포장재 (무독성 EPDM 칩)</h3>
+                        <p class="text-core-muted leading-relaxed text-[15.5px]">
+                            유해성 및 중금속 검출이 전혀 없는 기준 이상의 친환경 고무칩 및 EPDM-CHIP을 사용하여 
+                            어린이 놀이터와 공원의 수려한 자연 미관과 어린이의 안전을 동시에 지켜주는 현장포설형 충격흡수바닥재입니다.
+                        </p>
+
+                        <!-- 단체표준 품질 및 유해성 안전 기준 -->
+                        <div class="bg-core-bg rounded-3xl p-5 border border-core-border">
+                            <h4 class="text-sm font-bold text-core-charcoal mb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-shield-heart text-core-sage"></i>
+                                <span>제품 안전성 및 물리적 품질 기준 (SPS-KSSFIA1-1944)</span>
+                            </h4>
+                            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 text-xs">
+                                <div class="bg-white p-3.5 rounded-2xl border border-core-border/70">
+                                    <span class="text-core-muted block mb-0.5">인장강도</span>
+                                    <strong class="text-core-charcoal text-sm">0.6 MPa 이상</strong>
+                                </div>
+                                <div class="bg-white p-3.5 rounded-2xl border border-core-border/70">
+                                    <span class="text-core-muted block mb-0.5">신장률</span>
+                                    <strong class="text-core-charcoal text-sm">60% 이상</strong>
+                                </div>
+                                <div class="bg-white p-3.5 rounded-2xl border border-core-border/70">
+                                    <span class="text-core-muted block mb-0.5">인장응력</span>
+                                    <strong class="text-core-charcoal text-sm">0.45 MPa 이상</strong>
+                                </div>
+                                <div class="bg-white p-3.5 rounded-2xl border border-core-border/70">
+                                    <span class="text-core-muted block mb-0.5">압축응력</span>
+                                    <strong class="text-core-charcoal text-sm">0.2 MPa 이상</strong>
+                                </div>
+                                <div class="bg-white p-3.5 rounded-2xl border border-core-border/70">
+                                    <span class="text-core-muted block mb-0.5">미끄럼저항</span>
+                                    <strong class="text-core-sage text-sm">40 BPN 이상</strong>
+                                </div>
+                                <div class="bg-core-sageLight p-3.5 rounded-2xl border border-core-sageMist">
+                                    <span class="text-core-sage block font-semibold mb-0.5">유해성 안전</span>
+                                    <strong class="text-core-charcoal text-xs">중금속 18종·VOCs 무검출</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 인터랙티브 두께별 한계하강높이 시뮬레이터 -->
+                        <div class="bg-core-sageLight/60 rounded-3xl p-5 sm:p-6 border border-core-sageMist">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                                <div>
+                                    <h4 class="text-sm font-bold text-core-charcoal flex items-center gap-2">
+                                        <i class="fa-solid fa-chart-simple text-core-sage"></i>
+                                        <span>두께별 한계하강높이 시뮬레이터 (HIC 1000 기준)</span>
+                                    </h4>
+                                    <p class="text-xs text-core-muted mt-0.5">놀이기구 낙하 높이에 알맞은 포장 두께를 선택해 보세요.</p>
+                                </div>
+                                <div class="flex gap-1.5">
+                                    <button type="button" onclick="selectThickness(50)" data-thick="50" class="thick-btn active px-3.5 py-1.5 rounded-full text-xs font-bold bg-core-sage text-white transition">50mm</button>
+                                    <button type="button" onclick="selectThickness(55)" data-thick="55" class="thick-btn px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-core-charcoal border border-core-border transition">55mm</button>
+                                    <button type="button" onclick="selectThickness(75)" data-thick="75" class="thick-btn px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-core-charcoal border border-core-border transition">75mm</button>
+                                    <button type="button" onclick="selectThickness(95)" data-thick="95" class="thick-btn px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-core-charcoal border border-core-border transition">95mm</button>
+                                </div>
+                            </div>
+
+                            <div class="grid sm:grid-cols-12 gap-5 items-end bg-white rounded-2xl p-5 border border-core-border/80">
+                                <div class="sm:col-span-7 flex items-end justify-around h-36 pt-4 px-2 border-b border-core-border">
+                                    <div onclick="selectThickness(50)" class="cursor-pointer flex flex-col items-center w-12">
+                                        <span class="text-[11px] font-bold text-core-muted mb-1">1.5M</span>
+                                        <div id="bar-50" class="w-8 rounded-t-full bg-core-sage transition-all duration-300" style="height: 38px;"></div>
+                                        <span class="text-[11px] font-semibold text-core-charcoal mt-1.5">50mm</span>
+                                    </div>
+                                    <div onclick="selectThickness(55)" class="cursor-pointer flex flex-col items-center w-12">
+                                        <span class="text-[11px] font-bold text-core-muted mb-1">1.8M</span>
+                                        <div id="bar-55" class="w-8 rounded-t-full bg-core-sageMist transition-all duration-300" style="height: 52px;"></div>
+                                        <span class="text-[11px] font-semibold text-core-charcoal mt-1.5">55mm</span>
+                                    </div>
+                                    <div onclick="selectThickness(75)" class="cursor-pointer flex flex-col items-center w-12">
+                                        <span class="text-[11px] font-bold text-core-muted mb-1">2.8M</span>
+                                        <div id="bar-75" class="w-8 rounded-t-full bg-core-sageMist transition-all duration-300" style="height: 78px;"></div>
+                                        <span class="text-[11px] font-semibold text-core-charcoal mt-1.5">75mm</span>
+                                    </div>
+                                    <div onclick="selectThickness(95)" class="cursor-pointer flex flex-col items-center w-12">
+                                        <span class="text-[11px] font-bold text-core-muted mb-1">4.0M</span>
+                                        <div id="bar-95" class="w-8 rounded-t-full bg-core-sageMist transition-all duration-300" style="height: 105px;"></div>
+                                        <span class="text-[11px] font-semibold text-core-charcoal mt-1.5">95mm</span>
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-5 space-y-1.5">
+                                    <span class="text-xs font-semibold text-core-sage">선택 규격 안내</span>
+                                    <div class="font-serif text-2xl font-bold text-core-charcoal" id="hic-thickness-label">총 두께 50mm</div>
+                                    <div class="text-sm font-bold text-[#9A6728]" id="hic-height-label">한계하강높이: 약 1.5M</div>
+                                    <p class="text-[11px] text-core-muted leading-relaxed" id="hic-desc-label">
+                                        EPDM 표층 15mm + 보조탄성층 35mm 구성. 보행로 및 저높이 유아 놀이기구 구역에 적합합니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 우측 탄성포장재 대표 실사 + 5중 단면도 -->
+                    <div class="lg:col-span-5 bg-core-bgSub rounded-[28px] p-6 sm:p-7 border border-core-border space-y-5">
+                        <!-- 카달로그 16p/17p 놀이터 실사 사진 슬롯 -->
+                        <div class="rounded-2xl overflow-hidden h-52 border border-white shadow-sm relative" id="prod4-real-photo"></div>
+
+                        <div class="flex items-center justify-between pt-1">
+                            <div>
+                                <span class="font-editorial italic text-sm text-core-forest font-semibold">Elastic Layer Structure</span>
+                                <h4 class="font-serif text-lg font-bold text-core-charcoal">탄성포장재 단면도 (5중 구조)</h4>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-white text-core-sage text-xs font-bold border border-core-border">50~95mm</span>
+                        </div>
+
+                        <div class="space-y-2">
+                            <div class="layer-pill rounded-2xl bg-core-sky text-white p-3.5 shadow-soft">
+                                <div class="flex justify-between items-center text-xs opacity-95 mb-0.5">
+                                    <span class="font-semibold">01 · 상부 칼라 표층</span>
+                                    <span class="font-bold">T = 15mm</span>
+                                </div>
+                                <div class="font-bold text-sm">EPDM 칼라 표층 (캐릭터·유선형 디자인)</div>
+                            </div>
+                            <div class="layer-pill rounded-2xl bg-core-charcoal text-white p-3 flex justify-between items-center text-xs font-bold">
+                                <span>02 · 보조탄성층 (고탄성 충격흡수)</span>
+                                <span class="text-[#F3D39E]">T = 30~80mm</span>
+                            </div>
+                            <div class="layer-pill rounded-2xl bg-[#DCECE3] text-core-charcoal p-2.5 text-xs font-semibold">
+                                03 · 전용 프라이머 (접착 강화)
+                            </div>
+                            <div class="layer-pill rounded-2xl bg-white text-core-charcoal p-2.5 text-xs font-semibold border border-core-border">
+                                04 · 콘크리트 / 아스콘 기층
+                            </div>
+                            <div class="layer-pill rounded-2xl bg-[#EFE9DF] text-core-charcoal p-2.5 text-xs font-semibold border border-[#E0D6C6]">
+                                05 · 혼합골재 보조기층
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 5. 실사 시공사례 12종 갤러리 & Before/After 슬라이더 ==================== -->
+    <section id="portfolio" class="py-24 lg:py-32 bg-core-bgSub border-t border-core-border/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+            
+            <!-- 섹션 타이틀 & 폴더 선택 안내 -->
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 reveal">
+                <div>
+                    <span class="font-editorial italic text-lg text-core-forest font-semibold tracking-wider block mb-2">
+                        Real Photography Portfolio (50 Archive Assets)
+                    </span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-core-charcoal">
+                        실사 시공사례 갤러리 & 공간 변화 비교
+                    </h2>
+                    <p class="mt-2 text-core-muted text-base">
+                        카달로그에 수록된 실제 시공 사진 12대 대표 현장을 공법별로 확인하세요.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 5-1. 인터랙티브 Before & After 실사 비교 슬라이더 -->
+            <div class="bg-white rounded-[32px] p-6 sm:p-10 border border-core-border shadow-soft-lg reveal">
+                <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+                    <div>
+                        <span class="px-3 py-1 rounded-full bg-core-sageLight text-core-sage text-xs font-bold">BEFORE & AFTER SLIDER</span>
+                        <h3 class="font-serif text-xl sm:text-2xl font-bold text-core-charcoal mt-2">시공 전 노후 노면 vs 시공 후 실사 비교</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <button type="button" onclick="switchBaScene('school')" id="ba-btn-school" class="ba-scene-btn px-4 py-2 rounded-full text-xs font-bold bg-core-sage text-white transition">
+                            스쿨존 해님 스텐실 (p01_04.jpg)
+                        </button>
+                        <button type="button" onclick="switchBaScene('playground')" id="ba-btn-playground" class="ba-scene-btn px-4 py-2 rounded-full text-xs font-bold bg-core-bgSub text-core-muted hover:text-core-charcoal transition">
+                            어린이놀이터 탄성포장 (p16_40.jpg)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 비교 슬라이더 스테이지 -->
+                <div id="ba-stage" class="ba-container relative w-full h-[300px] sm:h-[440px] rounded-3xl overflow-hidden border border-core-border cursor-ew-resize select-none">
+                    <!-- AFTER 레이어 (실사 이미지) -->
+                    <div id="ba-after-layer" class="absolute inset-0 w-full h-full"></div>
+
+                    <!-- BEFORE 레이어 (시공 전 회색 아스팔트 노면) -->
+                    <div id="ba-before-layer" class="absolute inset-0 w-full h-full" style="clip-path: inset(0 50% 0 0);">
+                        <div class="w-full h-full relative bg-[#5E6366] flex items-center justify-center overflow-hidden">
+                            <svg viewBox="0 0 800 500" class="w-full h-full object-cover" preserveAspectRatio="xMidYMid slice">
+                                <rect width="800" height="500" fill="#686D70"/>
+                                <g stroke="#44484A" stroke-width="2.5" fill="none" opacity="0.7">
+                                    <path d="M120,140 L190,210 L165,285 L220,370"/>
+                                    <path d="M520,120 L485,205 L540,275 L505,390"/>
+                                    <path d="M310,240 L375,310 L350,420"/>
+                                </g>
+                                <line x1="400" y1="0" x2="400" y2="500" stroke="#B5B9BB" stroke-width="6" stroke-dasharray="24 28" opacity="0.35"/>
+                            </svg>
+                            <div class="absolute inset-0 bg-black/15"></div>
+                        </div>
+                    </div>
+
+                    <!-- BEFORE / AFTER 라벨 뱃지 -->
+                    <span class="absolute top-4 left-4 z-20 px-3.5 py-1.5 rounded-full bg-core-charcoal/85 backdrop-blur-xs text-white text-xs font-bold">
+                        BEFORE · 시공 전 노후 노면
+                    </span>
+                    <span class="absolute top-4 right-4 z-20 px-3.5 py-1.5 rounded-full bg-core-sage/90 backdrop-blur-xs text-white text-xs font-bold">
+                        AFTER · 페이브 실사 시공 완료
+                    </span>
+
+                    <!-- 중앙 드래그 핸들 바 -->
+                    <div id="ba-handle" class="absolute top-0 bottom-0 z-30 w-1 bg-white shadow-[0_0_15px_rgba(0,0,0,0.45)] pointer-events-none" style="left: 50%;">
+                        <div class="w-11 h-11 rounded-full bg-white text-core-sage border-2 border-core-sage shadow-lg flex items-center justify-center absolute top-1/2 -translate-x-1/2 -translate-y-1/2">
+                            <i class="fa-solid fa-left-right text-sm"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5-2. 카테고리 필터 탭 & 12대 실사 시공사례 그리드 -->
+            <div class="space-y-8 reveal">
+                <div class="flex flex-wrap items-center justify-between gap-4">
+                    <div class="flex flex-wrap gap-2" id="gallery-filter-bar">
+                        <button type="button" onclick="filterGallery('all', this)" class="gal-filter-btn active px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-core-sage text-white shadow-xs transition">
+                            전체 실사 (12)
+                        </button>
+                        <button type="button" onclick="filterGallery('school', this)" class="gal-filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-white text-core-muted hover:text-core-charcoal border border-core-border transition">
+                            어린이보호구역 · 도로 (4)
+                        </button>
+                        <button type="button" onclick="filterGallery('stencil', this)" class="gal-filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-white text-core-muted hover:text-core-charcoal border border-core-border transition">
+                            스텐실 · 스탬프 테마거리 (4)
+                        </button>
+                        <button type="button" onclick="filterGallery('playground', this)" class="gal-filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-white text-core-muted hover:text-core-charcoal border border-core-border transition">
+                            어린이놀이터 · 탄성포장 (4)
+                        </button>
+                    </div>
+                    <span class="text-xs text-core-muted">사진 카드를 클릭하면 고해상도 라이트박스 및 상세 시방서를 볼 수 있습니다.</span>
+                </div>
+
+                <!-- 12대 실사 시공사례 그리드 -->
+                <div id="portfolio-grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 6. 조달청 나라장터(G2B) 등록 단가표 & 스마트 견적 계산기 ==================== -->
+    <section id="g2b-calculator" class="py-24 lg:py-32 bg-core-bg border-t border-core-border/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14 reveal">
+                <span class="font-editorial italic text-lg text-core-forest font-semibold tracking-wider block mb-2">
+                    Public Procurement & Smart Estimate
+                </span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-core-charcoal">
+                    조달청 나라장터 단가표 및 예상 견적 계산기
+                </h2>
+                <p class="mt-3 text-core-muted text-base">
+                    조달청 나라장터 종합쇼핑몰 등록 모델별 단가를 확인하고, 시공 면적(㎡)을 조절하여 예상 견적과 직영 절감 효과를 산출해 보세요.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 items-start reveal">
+                <!-- 좌측: 조달청 나라장터 등록 단가표 -->
+                <div class="lg:col-span-7 bg-white rounded-[32px] p-6 sm:p-8 border border-core-border shadow-soft">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-6">
+                        <div>
+                            <span class="text-xs font-semibold text-core-sage block">나라장터 종합쇼핑몰 정식 등록 품목</span>
+                            <h3 class="font-serif text-xl font-bold text-core-charcoal">미끄럼방지 포장재 등록 현황</h3>
+                        </div>
+                        <span class="px-3.5 py-1.5 rounded-full bg-core-sageLight text-core-sage text-xs font-semibold">최대 10년 품질보증</span>
+                    </div>
+
+                    <div class="overflow-x-auto bg-core-bg rounded-2xl border border-core-border">
+                        <table class="w-full text-sm text-left">
+                            <thead class="bg-core-sageLight/80 text-core-charcoal text-xs font-bold border-b border-core-border">
+                                <tr>
+                                    <th class="py-3.5 px-4 text-center">NO</th>
+                                    <th class="py-3.5 px-4">G2B 식별번호</th>
+                                    <th class="py-3.5 px-4">모델 / 규격명</th>
+                                    <th class="py-3.5 px-4 text-right">가격 (㎡/원)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-core-border/60 bg-white">
+                                <tr class="hover:bg-core-sageLight/35 transition cursor-pointer" onclick="selectCalcModel('25531687')">
+                                    <td class="py-4 px-4 text-center text-core-muted font-semibold">1</td>
+                                    <td class="py-4 px-4 font-bold text-core-sage">25531687</td>
+                                    <td class="py-4 px-4 text-core-charcoal font-medium">PAVE-03, T3.0mm, 미끄럼방지 포장재 1종, 3T</td>
+                                    <td class="py-4 px-4 text-right font-serif font-bold text-core-charcoal">28,900원</td>
+                                </tr>
+                                <tr class="hover:bg-core-sageLight/35 transition cursor-pointer" onclick="selectCalcModel('25531686')">
+                                    <td class="py-4 px-4 text-center text-core-muted font-semibold">2</td>
+                                    <td class="py-4 px-4 font-bold text-core-sage">25531686</td>
+                                    <td class="py-4 px-4 text-core-charcoal font-medium">PAVE-04, T3.0mm, 미끄럼방지 포장재 1종, 스텐실, 3T</td>
+                                    <td class="py-4 px-4 text-right font-serif font-bold text-core-charcoal">34,300원</td>
+                                </tr>
+                                <tr class="hover:bg-core-sageLight/35 transition cursor-pointer" onclick="selectCalcModel('25531685')">
+                                    <td class="py-4 px-4 text-center text-core-muted font-semibold">3</td>
+                                    <td class="py-4 px-4 font-bold text-core-sage">25531685</td>
+                                    <td class="py-4 px-4 text-core-charcoal font-medium">PAVE-05, T3.0mm, 미끄럼방지 포장재 1종, 스탬프, 3T</td>
+                                    <td class="py-4 px-4 text-right font-serif font-bold text-core-charcoal">39,700원</td>
+                                </tr>
+                                <tr class="hover:bg-core-sageLight/35 transition cursor-pointer" onclick="selectCalcModel('25531688')">
+                                    <td class="py-4 px-4 text-center text-core-muted font-semibold">4</td>
+                                    <td class="py-4 px-4 font-bold text-core-sage">25531688</td>
+                                    <td class="py-4 px-4 text-core-charcoal font-medium">PAVE-06, T4.0mm, 미끄럼방지 포장재 1종, 4T</td>
+                                    <td class="py-4 px-4 text-right font-serif font-bold text-core-charcoal">30,000원</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="mt-4 flex flex-wrap items-center justify-between gap-2 text-xs text-core-muted bg-core-bgSub px-4 py-3 rounded-2xl border border-core-border/80">
+                        <span>* 표의 품목 행을 클릭하시면 우측 견적 계산기에 자동 반영됩니다.</span>
+                        <span class="font-semibold text-core-sage">탄성포장재(2025.05 등록) 별도 문의</span>
+                    </div>
+                </div>
+
+                <!-- 우측: 예상 견적 대시보드 카드 -->
+                <div class="lg:col-span-5 bg-white rounded-[32px] p-6 sm:p-8 border border-core-border shadow-soft-lg">
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <span class="font-editorial italic text-sm text-core-forest font-semibold">Smart Estimate Dashboard</span>
+                            <h3 class="font-serif text-xl font-bold text-core-charcoal">예상 소요 견적 계산기</h3>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-core-sandLight text-[#9A6728] flex items-center justify-center">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                    </div>
+
+                    <div class="space-y-5">
+                        <div>
+                            <label for="calc-model" class="block text-xs font-semibold text-core-muted mb-2">1. 나라장터 등록 모델 선택</label>
+                            <select id="calc-model" onchange="calculateEstimate()" class="w-full rounded-2xl bg-core-bg border border-core-border text-core-charcoal px-4 py-3.5 text-sm font-semibold focus:outline-none focus:border-core-sage">
+                                <option value="28900" data-g2b="25531687" data-name="PAVE-03 (미끄럼방지 3T)">[25531687] PAVE-03 (일반 3T) · 28,900원/㎡</option>
+                                <option value="34300" data-g2b="25531686" data-name="PAVE-04 (스텐실 3T)">[25531686] PAVE-04 (스텐실 3T) · 34,300원/㎡</option>
+                                <option value="39700" data-g2b="25531685" data-name="PAVE-05 (스탬프 3T)">[25531685] PAVE-05 (스탬프 3T) · 39,700원/㎡</option>
+                                <option value="30000" data-g2b="25531688" data-name="PAVE-06 (미끄럼방지 4T)">[25531688] PAVE-06 (일반 4T) · 30,000원/㎡</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label for="calc-area" class="text-xs font-semibold text-core-muted">2. 시공 예정 면적 (㎡)</label>
+                                <span id="calc-pyeong-badge" class="text-xs font-semibold text-core-sage bg-core-sageLight px-2.5 py-0.5 rounded-full">약 60.5평</span>
+                            </div>
+                            <input type="range" id="calc-area-slider" min="10" max="2000" step="10" value="200" oninput="syncAreaFromSlider(this.value)" class="w-full mb-3">
+                            <div class="relative">
+                                <input type="number" id="calc-area" value="200" min="1" max="100000" oninput="syncAreaFromInput(this.value)" class="w-full rounded-2xl bg-core-bg border border-core-border text-core-charcoal px-4 py-3 pr-12 text-base font-bold focus:outline-none focus:border-core-sage">
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-sm font-semibold text-core-muted">㎡</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-core-sageLight/75 rounded-3xl p-5 border border-core-sageMist space-y-3">
+                            <div class="flex justify-between text-xs text-core-muted">
+                                <span>조달청 기준 단가</span>
+                                <span id="calc-unit-price" class="font-bold text-core-charcoal">28,900 원 / ㎡</span>
+                            </div>
+                            <div class="flex justify-between text-xs text-core-muted">
+                                <span>타사 대비 직영 절감 예상액 (최대 25%)</span>
+                                <span id="calc-saving-price" class="font-bold text-core-forest">약 1,926,000 원 절감</span>
+                            </div>
+                            <div class="h-px bg-core-sage/15"></div>
+                            <div class="flex justify-between items-baseline pt-1">
+                                <span class="text-sm font-bold text-core-charcoal">총 예상 금액</span>
+                                <div>
+                                    <span id="calc-total-price" class="font-serif text-2xl sm:text-3xl font-bold text-core-sage">5,780,000</span>
+                                    <span class="text-sm font-bold text-core-charcoal ml-0.5">원</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" onclick="applyEstimateToContact()" class="w-full py-4 rounded-full bg-core-sage hover:bg-core-forest text-white font-semibold text-sm shadow-soft transition flex items-center justify-center gap-2">
+                            <span>이 조건으로 상담 신청하기</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 7. 인증현황 & 회사연혁 (2023 ~ 2025) ==================== -->
+    <section id="credentials" class="py-24 lg:py-32 bg-core-bgSub border-t border-core-border/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+            
+            <!-- 7-1. 공식 인증 및 등록증 현황 -->
+            <div class="reveal">
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-3">
+                    <div>
+                        <span class="font-editorial italic text-lg text-core-forest font-semibold tracking-wider block mb-1">
+                            Certificates & Licenses
+                        </span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-core-charcoal">공식 인증 및 등록증 현황</h2>
+                    </div>
+                    <p class="text-xs text-core-muted">카드를 클릭하시면 인증번호 및 발급기관 상세 정보를 확인하실 수 있습니다.</p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                    <button type="button" onclick="openCertModal('biz')" class="group bg-white hover:bg-core-sageLight/50 rounded-3xl p-6 border border-core-border hover:border-core-sage text-left shadow-soft transition">
+                        <div class="w-11 h-11 rounded-2xl bg-core-bgSub group-hover:bg-core-sage group-hover:text-white text-core-sage flex items-center justify-center text-base mb-4 transition">
+                            <i class="fa-solid fa-file-contract"></i>
+                        </div>
+                        <span class="text-[11px] font-semibold text-core-forest block mb-1">국세청 · 춘천세무서</span>
+                        <h3 class="font-serif font-bold text-core-charcoal text-base mb-1">사업자등록증</h3>
+                        <p class="text-xs text-core-muted">734-86-03064</p>
+                        <span class="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-core-sage">
+                            원본 상세보기 <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i>
+                        </span>
+                    </button>
+
+                    <button type="button" onclick="openCertModal('factory')" class="group bg-white hover:bg-core-sageLight/50 rounded-3xl p-6 border border-core-border hover:border-core-sage text-left shadow-soft transition">
+                        <div class="w-11 h-11 rounded-2xl bg-core-bgSub group-hover:bg-core-sage group-hover:text-white text-core-sage flex items-center justify-center text-base mb-4 transition">
+                            <i class="fa-solid fa-industry"></i>
+                        </div>
+                        <span class="text-[11px] font-semibold text-core-forest block mb-1">한국산업단지공단</span>
+                        <h3 class="font-serif font-bold text-core-charcoal text-base mb-1">공장등록증명서</h3>
+                        <p class="text-xs text-core-muted">남양주시 화도읍 공장</p>
+                        <span class="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-core-sage">
+                            원본 상세보기 <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i>
+                        </span>
+                    </button>
+
+                    <button type="button" onclick="openCertModal('sme')" class="group bg-white hover:bg-core-sageLight/50 rounded-3xl p-6 border border-core-border hover:border-core-sage text-left shadow-soft transition">
+                        <div class="w-11 h-11 rounded-2xl bg-core-bgSub group-hover:bg-core-sage group-hover:text-white text-core-sage flex items-center justify-center text-base mb-4 transition">
+                            <i class="fa-solid fa-building-circle-check"></i>
+                        </div>
+                        <span class="text-[11px] font-semibold text-core-forest block mb-1">중소벤처기업부</span>
+                        <h3 class="font-serif font-bold text-core-charcoal text-base mb-1">중소기업 확인서</h3>
+                        <p class="text-xs text-core-muted">소기업(소상공인) · 입찰용</p>
+                        <span class="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-core-sage">
+                            원본 상세보기 <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i>
+                        </span>
+                    </button>
+
+                    <button type="button" onclick="openCertModal('sps1')" class="group bg-white hover:bg-core-sageLight/50 rounded-3xl p-6 border border-core-border hover:border-core-sage text-left shadow-soft transition">
+                        <div class="w-11 h-11 rounded-2xl bg-core-sageLight group-hover:bg-core-sage group-hover:text-white text-core-sage flex items-center justify-center text-base mb-4 transition">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
+                        <span class="text-[11px] font-semibold text-core-forest block mb-1">도로교통안전기술협회</span>
+                        <h3 class="font-serif font-bold text-core-charcoal text-base mb-1">단체표준인증서</h3>
+                        <p class="text-xs text-core-muted">제24-433호 · 미끄럼방지</p>
+                        <span class="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-core-sage">
+                            원본 상세보기 <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i>
+                        </span>
+                    </button>
+
+                    <button type="button" onclick="openCertModal('sps2')" class="group bg-white hover:bg-core-sageLight/50 rounded-3xl p-6 border border-core-border hover:border-core-sage text-left shadow-soft transition">
+                        <div class="w-11 h-11 rounded-2xl bg-core-sandLight group-hover:bg-core-sand group-hover:text-white text-[#9A6728] flex items-center justify-center text-base mb-4 transition">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <span class="text-[11px] font-semibold text-[#9A6728] block mb-1">한국체육시설공업협회</span>
+                        <h3 class="font-serif font-bold text-core-charcoal text-base mb-1">단체표준인증서</h3>
+                        <p class="text-xs text-core-muted">놀이시설 탄성포장재</p>
+                        <span class="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-core-sage">
+                            상세보기 <i class="fa-solid fa-plus text-[10px]"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 7-2. 에디토리얼 회사 연혁 (2023 ~ 2025) -->
+            <div class="bg-white rounded-[32px] p-7 sm:p-12 border border-core-border shadow-soft reveal">
+                <div class="text-center max-w-xl mx-auto mb-12">
+                    <span class="font-editorial italic text-lg text-core-forest font-semibold tracking-wider block mb-1">
+                        Company Milestones
+                    </span>
+                    <h3 class="font-serif text-2xl sm:text-3xl font-bold text-core-charcoal">성장 발자취 (2023 ~ 2025)</h3>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="relative pl-6 border-l-2 border-core-sageMist space-y-5">
+                        <div class="inline-block px-4 py-1 rounded-full bg-core-bgSub text-core-charcoal font-serif text-lg font-bold">2023</div>
+                        <div class="space-y-4 text-sm">
+                            <div>
+                                <span class="text-xs font-bold text-core-sage block">2023. 03</span>
+                                <p class="font-semibold text-core-charcoal mt-0.5">주식회사 페이브 법인 설립</p>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-core-sage block">2023. 04</span>
+                                <p class="font-semibold text-core-charcoal mt-0.5">전문건설업 면허등록 (주력분야: 도장공사업)</p>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-core-sage block">2023. 05</span>
+                                <p class="font-semibold text-core-charcoal mt-0.5">남양주시 화도읍 공장 등록</p>
+                                <span class="text-xs text-core-muted block mt-0.5">한국산업분류 20202 (합성수지 및 기타플라스틱 제조업)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-6 border-l-2 border-core-sage space-y-5">
+                        <div class="inline-block px-4 py-1 rounded-full bg-core-sageLight text-core-sage font-serif text-lg font-bold">2024</div>
+                        <div class="space-y-4 text-sm">
+                            <div>
+                                <span class="text-xs font-bold text-core-sage block">2024. 09</span>
+                                <p class="font-semibold text-core-charcoal mt-0.5">미끄럼방지 포장재 단체표준인증 획득</p>
+                                <span class="text-xs text-core-muted block mt-0.5">도로교통안전기술협회 (SPS-F KTS-1102-1890)</span>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-core-sage block">2024. 12</span>
+                                <p class="font-semibold text-core-charcoal mt-0.5">미끄럼방지 포장재 나라장터 종합쇼핑몰 등록</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-6 border-l-2 border-core-sand space-y-5">
+                        <div class="inline-block px-4 py-1 rounded-full bg-core-sandLight text-[#9A6728] font-serif text-lg font-bold">2025</div>
+                        <div class="space-y-4 text-sm">
+                            <div>
+                                <span class="text-xs font-bold text-[#9A6728] block">2025. 03</span>
+                                <p class="font-semibold text-core-charcoal mt-0.5">어린이놀이시설 탄성포장재 단체표준인증 획득</p>
+                                <span class="text-xs text-core-muted block mt-0.5">한국체육시설공업협회 (SPS-KSSFIA1-1944)</span>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-[#9A6728] block">2025. 05</span>
+                                <p class="font-semibold text-core-charcoal mt-0.5">어린이놀이시설 탄성포장재 나라장터 종합쇼핑몰 등록</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 8. 상담 문의 섹션 (Contact) ==================== -->
+    <section id="contact" class="py-24 lg:py-32 bg-core-sageLight/65 border-t border-core-sageMist">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-start reveal">
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="font-editorial italic text-lg text-core-forest font-semibold tracking-wider block">
+                        Contact & Consultation
+                    </span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-core-charcoal leading-snug">
+                        안전한 공간의 시작,<br>
+                        <span class="text-core-sage">페이브와 함께 상의하세요</span>
+                    </h2>
+                    <p class="text-core-muted text-[15px] leading-relaxed">
+                        조달청 나라장터 관급자재 납품, 현장 맞춤형 설계·시방서 검토, 시공 단가 견적 등 
+                        편안하게 문의를 남겨주시면 담당 엔지니어가 정성껏 안내해 드리겠습니다.
+                    </p>
+
+                    <div class="space-y-3.5 pt-2">
+                        <div class="bg-white/90 rounded-3xl p-5 border border-core-border flex items-start gap-4 shadow-xs">
+                            <div class="w-10 h-10 rounded-full bg-core-sageLight text-core-sage flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-core-muted block">대표전화 / 팩스</span>
+                                <strong class="text-base text-core-charcoal font-bold">T. 033-442-0308 · F. 033-821-1225</strong>
+                            </div>
+                        </div>
+
+                        <div class="bg-white/90 rounded-3xl p-5 border border-core-border flex items-start gap-4 shadow-xs">
+                            <div class="w-10 h-10 rounded-full bg-core-sandLight text-[#9A6728] flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="flex-1">
+                                <span class="text-xs text-core-muted block">공식 이메일 (도면 · 내역서 송부)</span>
+                                <div class="flex items-center justify-between gap-2 mt-0.5">
+                                    <strong class="text-base text-core-charcoal font-bold">pave-@naver.com</strong>
+                                    <button type="button" onclick="copyEmail()" class="px-3 py-1 rounded-full bg-core-bgSub hover:bg-core-sageLight text-xs font-semibold text-core-sage transition">
+                                        주소 복사
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white/90 rounded-3xl p-5 border border-core-border flex items-start gap-4 shadow-xs">
+                            <div class="w-10 h-10 rounded-full bg-core-bgSub text-core-forest flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="space-y-2 text-xs">
+                                <div>
+                                    <span class="font-bold text-core-sage block">본사 / 사업장</span>
+                                    <span class="text-core-charcoal">강원특별자치도 화천군 하남면 공단길 80-40 (원천농공단지 내)</span>
+                                </div>
+                                <div>
+                                    <span class="font-bold text-[#9A6728] block">제조 공장</span>
+                                    <span class="text-core-charcoal">경기도 남양주시 화도읍 비룡로379번길 19-7 1동 1호</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 우측 상담 폼 -->
+                <div class="lg:col-span-7 bg-white rounded-[32px] p-7 sm:p-10 border border-core-border shadow-soft-lg">
+                    <h3 class="font-serif text-xl sm:text-2xl font-bold text-core-charcoal mb-6">온라인 견적 · 기술 상담 신청</h3>
+
+                    <form id="inquiry-form" onsubmit="handleInquirySubmit(event)" class="space-y-4">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-core-muted mb-1.5">성함 / 기관·회사명 <span class="text-core-sand">*</span></label>
+                                <input type="text" id="inq-name" required placeholder="예: 홍길동 주무관 / OO시청" class="w-full rounded-2xl bg-core-bg border border-core-border px-4 py-3.5 text-sm focus:outline-none focus:border-core-sage">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-core-muted mb-1.5">연락처 <span class="text-core-sand">*</span></label>
+                                <input type="tel" id="inq-phone" required placeholder="예: 010-1234-5678" class="w-full rounded-2xl bg-core-bg border border-core-border px-4 py-3.5 text-sm focus:outline-none focus:border-core-sage">
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-core-muted mb-1.5">희망 공법 / 제품</label>
+                                <select id="inq-category" class="w-full rounded-2xl bg-core-bg border border-core-border px-4 py-3.5 text-sm font-medium focus:outline-none focus:border-core-sage">
+                                    <option value="미끄럼방지 포장재 (일반 3T/4T)">미끄럼방지 포장재 (일반 3T/4T)</option>
+                                    <option value="미끄럼방지 포장재 스텐실 (3T)">미끄럼방지 포장재 스텐실 (3T)</option>
+                                    <option value="미끄럼방지 포장재 스탬프 (3T)">미끄럼방지 포장재 스탬프 (3T)</option>
+                                    <option value="어린이놀이시설 탄성포장재">어린이놀이시설 탄성포장재 (50~95mm)</option>
+                                    <option value="조달청 나라장터 관급자재 문의">조달청 나라장터 관급자재 구매</option>
+                                    <option value="설계 자료(시방서/단면도) 및 인증서 요청">설계 자료 및 인증서 요청</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-core-muted mb-1.5">예상 시공 면적 (㎡)</label>
+                                <input type="text" id="inq-area" placeholder="예: 약 300㎡ (미정 시 생략 가능)" class="w-full rounded-2xl bg-core-bg border border-core-border px-4 py-3.5 text-sm focus:outline-none focus:border-core-sage">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-core-muted mb-1.5">문의 내용 <span class="text-core-sand">*</span></label>
+                            <textarea id="inq-message" rows="4" required placeholder="시공 예정 지역, 희망 일정 또는 궁금하신 점을 자유롭게 적어주세요." class="w-full rounded-2xl bg-core-bg border border-core-border px-4 py-3.5 text-sm focus:outline-none focus:border-core-sage"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-full bg-core-sage hover:bg-core-forest text-white font-semibold text-sm sm:text-base shadow-soft transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>상담 및 견적 신청하기</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 9. 푸터 (Footer) ==================== -->
+    <footer class="bg-core-charcoal text-[#FAF8F5]/85 py-14 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+            <div class="space-y-2.5">
+                <div class="flex items-center gap-2.5">
+                    <span class="font-serif text-xl font-bold text-white">주식회사 페이브</span>
+                    <span class="font-editorial italic text-sm text-core-sand font-semibold">PAVE Co., Ltd.</span>
+                </div>
+                <p class="text-xs text-[#E5E0D8]/80 leading-relaxed">
+                    본사: 강원특별자치도 화천군 하남면 공단길 80-40 (원천농공단지 내)<br>
+                    공장: 경기도 남양주시 화도읍 비룡로379번길 19-7 1동 1호<br>
+                    대표자: 박정남 | 사업자등록번호: 734-86-03064 | T. 033-442-0308 | F. 033-821-1225 | E. pave-@naver.com
+                </p>
+            </div>
+            <div class="text-xs text-[#E5E0D8]/60">
+                &copy; 2025 주식회사 페이브 (PAVE Co., Ltd.). All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== 모달 1: 실사 시공사례 라이트박스 뷰어 ==================== -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-core-charcoal/75 backdrop-blur-xs p-3 sm:p-5">
+        <div class="bg-[#FAF8F5] rounded-[32px] max-w-4xl w-full overflow-hidden shadow-soft-lg border border-core-border">
+            <div class="relative h-64 sm:h-96 bg-core-charcoal">
+                <div id="lb-visual-container" class="w-full h-full"></div>
+                <button type="button" onclick="closeLightbox()" aria-label="닫기" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 hover:bg-white text-core-charcoal flex items-center justify-center shadow-md transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <span id="lb-tag" class="absolute top-4 left-4 px-3.5 py-1.5 rounded-full bg-core-sage text-white text-xs font-bold shadow-sm"></span>
+            </div>
+            <div class="p-6 sm:p-8 space-y-4">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                    <span id="lb-spec" class="text-xs font-bold text-[#9A6728] bg-core-sandLight px-3 py-1 rounded-full"></span>
+                    <span id="lb-filename-info" class="text-xs text-core-muted"></span>
+                </div>
+                <h3 id="lb-title" class="font-serif text-xl sm:text-2xl font-bold text-core-charcoal"></h3>
+                <p id="lb-desc" class="text-sm text-core-muted leading-relaxed"></p>
+                <div class="pt-3 flex flex-wrap justify-end gap-2.5 border-t border-core-border">
+                    <button type="button" onclick="closeLightbox()" class="px-5 py-2.5 rounded-full bg-core-bgSub hover:bg-core-border text-core-charcoal text-xs font-semibold transition">
+                        닫기
+                    </button>
+                    <button type="button" onclick="inquireFromLightbox()" class="px-6 py-2.5 rounded-full bg-core-sage hover:bg-core-forest text-white text-xs font-semibold shadow-xs transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>이 시공사례로 견적 문의하기</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 모달 2: 공식 등록증 및 인증서 고해상도 상세 뷰어 모달 ==================== -->
+    <div id="cert-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-core-charcoal/70 backdrop-blur-xs p-3 sm:p-5">
+        <div class="bg-[#FAF8F5] rounded-[32px] max-w-5xl w-full max-h-[92vh] flex flex-col overflow-hidden shadow-soft-lg border border-core-border relative">
+            <!-- 모달 상단 헤더 & 서류 빠른 전환 탭 -->
+            <div class="px-6 py-4 sm:px-8 sm:py-5 bg-white border-b border-core-border flex flex-wrap items-center justify-between gap-3 shrink-0">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-core-sageLight text-core-sage flex items-center justify-center text-base shrink-0">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div>
+                        <span id="modal-cert-issuer" class="text-[11px] font-semibold text-core-forest block">발급기관</span>
+                        <h3 id="modal-cert-title" class="font-serif text-lg sm:text-xl font-bold text-core-charcoal">인증서 제목</h3>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <button type="button" onclick="closeCertModal()" aria-label="닫기" class="w-9 h-9 rounded-full bg-core-bgSub hover:bg-core-sage hover:text-white text-core-charcoal flex items-center justify-center transition">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 서류 빠른 전환 탭 바 -->
+            <div class="px-6 py-2.5 bg-core-bgSub border-b border-core-border flex items-center gap-1.5 overflow-x-auto shrink-0">
+                <button type="button" onclick="openCertModal('biz')" data-cert-tab="biz" class="cert-switch-tab px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition">
+                    1. 사업자등록증
+                </button>
+                <button type="button" onclick="openCertModal('factory')" data-cert-tab="factory" class="cert-switch-tab px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition">
+                    2. 공장등록증명서
+                </button>
+                <button type="button" onclick="openCertModal('sme')" data-cert-tab="sme" class="cert-switch-tab px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition">
+                    3. 중소기업 확인서
+                </button>
+                <button type="button" onclick="openCertModal('sps1')" data-cert-tab="sps1" class="cert-switch-tab px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition">
+                    4. 단체표준인증서 (미끄럼방지)
+                </button>
+                <button type="button" onclick="openCertModal('sps2')" data-cert-tab="sps2" class="cert-switch-tab px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition">
+                    5. 탄성포장재 인증 · 전문건설면허
+                </button>
+            </div>
+
+            <!-- 모달 본문 (좌측: 고해상도 원본 문서 뷰어 / 우측: 핵심 기재사항 요약) -->
+            <div class="flex-1 overflow-y-auto p-5 sm:p-7">
+                <div id="cert-modal-grid" class="grid lg:grid-cols-12 gap-6 items-start">
+                    <!-- 좌측 원본 스캔 이미지 뷰어 영역 -->
+                    <div id="cert-doc-viewer-col" class="lg:col-span-7 bg-core-bgSub rounded-2xl border border-core-border overflow-hidden flex flex-col">
+                        <div class="px-4 py-2.5 bg-white/90 border-b border-core-border flex items-center justify-between gap-2">
+                            <span id="cert-doc-filename" class="text-[11px] font-semibold text-core-muted flex items-center gap-1.5">
+                                <i class="fa-regular fa-file-image text-core-sage"></i>
+                                <span>원본 문서 미리보기</span>
+                            </span>
+                            <div class="flex items-center gap-1.5">
+                                <button type="button" onclick="setCertZoom(1)" id="cert-zoom-100" class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-core-sage text-white transition">
+                                    100% 맞춤
+                                </button>
+                                <button type="button" onclick="setCertZoom(1.5)" id="cert-zoom-150" class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-core-bgSub text-core-charcoal hover:bg-core-sageLight transition">
+                                    150% 확대
+                                </button>
+                            </div>
+                        </div>
+                        <div id="cert-doc-scroll-box" class="w-full max-h-[58vh] overflow-auto bg-[#ECE9E2] p-3 sm:p-4 flex justify-center items-start">
+                            <div id="cert-doc-image-wrap" class="w-full transition-all duration-200 origin-top-left"></div>
+                        </div>
+                    </div>
+
+                    <!-- 우측 주요 기재사항 요약표 -->
+                    <div id="cert-doc-info-col" class="lg:col-span-5 space-y-4">
+                        <div class="bg-white rounded-2xl p-5 border border-core-border shadow-2xs">
+                            <div class="flex items-center justify-between mb-3 pb-2.5 border-b border-core-border">
+                                <span class="text-xs font-bold text-core-sage flex items-center gap-1.5">
+                                    <i class="fa-solid fa-circle-check"></i> 공식 확인 기재사항
+                                </span>
+                                <span id="cert-doc-badge" class="px-2.5 py-0.5 rounded-full bg-core-sageLight text-core-sage text-[10px] font-bold">원본 대조필</span>
+                            </div>
+                            <div id="modal-cert-body" class="space-y-1 text-sm"></div>
+                        </div>
+
+                        <div class="bg-core-sageLight/70 rounded-2xl p-4 border border-core-sageMist text-xs text-core-muted leading-relaxed">
+                            <strong class="text-core-charcoal block mb-1"><i class="fa-solid fa-shield-halved text-core-sage mr-1"></i>관급·민수 입찰 및 계약 증빙 안내</strong>
+                            상단 <strong class="text-core-sage">[150% 확대]</strong> 버튼을 누르시면 문서확인번호, 직인 및 세부 업종·규격을 원본 그대로 선명하게 열람하실 수 있습니다.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 모달 하단 닫기 바 -->
+            <div class="px-6 py-3.5 bg-white border-t border-core-border flex items-center justify-between shrink-0">
+                <span class="text-[11px] text-core-muted">주식회사 페이브 (PAVE Co., Ltd.) 공식 증빙 서류</span>
+                <button type="button" onclick="closeCertModal()" class="px-6 py-2 rounded-full bg-core-sage hover:bg-core-forest text-white text-xs font-semibold transition">
+                    닫기
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 커스텀 토스트 메시지 ==================== -->
+    <div id="toast-box" class="fixed bottom-6 right-6 z-50 hidden max-w-sm bg-core-charcoal text-[#FAF8F5] px-5 py-4 rounded-full shadow-soft-lg border border-core-sage/40 flex items-center gap-3">
+        <span class="w-6 h-6 rounded-full bg-core-sage text-white flex items-center justify-center text-xs shrink-0">
+            <i class="fa-solid fa-check"></i>
+        </span>
+        <p id="toast-message" class="text-xs sm:text-sm font-medium leading-snug"></p>
+    </div>
+
+    <!-- ==================== JavaScript 실사 이미지 매핑 & 인터랙션 엔진 ==================== -->
+    <script>
+        // ================= 1. GitHub 공개 저장소(podojava/public_images) 실사 이미지 연동 =================
+        const GITHUB_RAW_ROOT = 'https://raw.githubusercontent.com/podojava/public_images/main/';
+        const GITHUB_RAW_SUB  = 'https://raw.githubusercontent.com/podojava/public_images/main/soft_style/';
+
+        function getRealPhotoSrc(filename) {
+            return `${GITHUB_RAW_ROOT}${filename}`;
+        }
+
+        // 1차 경로(main/파일명) 로드 실패 시 2차 경로(main/soft_style/파일명) 자동 시도 후 폴백 표시
+        function handlePhotoError(imgEl, filename, encodedFallback) {
+            if (!imgEl.dataset.retriedSub) {
+                imgEl.dataset.retriedSub = 'true';
+                imgEl.src = `${GITHUB_RAW_SUB}${filename}`;
+                return;
+            }
+            imgEl.parentElement.innerHTML = decodeURIComponent(encodedFallback);
+        }
+
+        // 모든 <img> 태그 생성 헬퍼
+        function createRealPhotoImg(filename, altText, extraClass = 'w-full h-full object-cover', compact = false) {
+            const src = getRealPhotoSrc(filename);
+            const fallbackHtml = compact
+                ? `<div class="photo-fallback-box w-full h-full flex flex-col items-center justify-center p-2 text-center">
+                        <i class="fa-solid fa-image text-core-sage text-sm mb-1"></i>
+                        <span class="text-[10px] font-bold text-core-charcoal leading-tight">${filename}</span>
+                   </div>`
+                : `<div class="photo-fallback-box w-full h-full flex flex-col items-center justify-center p-5 text-center border border-core-sageMist/60">
+                        <div class="w-11 h-11 rounded-full bg-white/90 text-core-sage flex items-center justify-center shadow-xs mb-2.5">
+                            <i class="fa-solid fa-camera text-base"></i>
+                        </div>
+                        <span class="px-2.5 py-0.5 rounded-full bg-white/90 text-core-sage text-[11px] font-bold mb-1 shadow-2xs">${filename}</span>
+                        <p class="text-xs font-bold text-core-charcoal line-clamp-1">${altText}</p>
+                        <p class="text-[11px] text-core-muted mt-1">주식회사 페이브 공식 시공사례</p>
+                   </div>`;
+
+            const encodedFallback = encodeURIComponent(fallbackHtml);
+            return `<img src="${src}" alt="${altText}" class="${extraClass}" loading="lazy" onerror="handlePhotoError(this, '${filename}', '${encodedFallback}')">`;
+        }
+
+        // ================= 2. 히어로 슬라이드 (카달로그 대표 실사 3종) =================
+        const heroSlides = [
+            {
+                filename: 'p01_04.jpg',
+                tag: '어린이보호구역 · 스텐실 공법 (p01_04.jpg)',
+                title: '유치원·초등학교 앞 해님 브릭 스쿨존 실사'
+            },
+            {
+                filename: 'p01_02.jpg',
+                tag: '어린이놀이시설 · 무독성 EPDM 탄성포장재 (p01_02.jpg)',
+                title: '단지 내 대형 테마 놀이터 탄성바닥재 시공 실사'
+            },
+            {
+                filename: 'p01_01.jpg',
+                tag: '자전거도로·보행로 · 핵스타일 미끄럼방지 (p01_01.jpg)',
+                title: '시인성과 미끄럼저항을 높인 레드·그린 보행로 실사'
+            }
+        ];
+        let currentHeroIdx = 0;
+
+        function renderHeroVisuals() {
+            const slide = heroSlides[currentHeroIdx];
+            const slot = document.getElementById('hero-visual-slot');
+            slot.innerHTML = createRealPhotoImg(slide.filename, slide.title, 'w-full h-full object-cover transition duration-500');
+
+            document.getElementById('hero-slide-tag').textContent = slide.tag;
+            document.getElementById('hero-slide-title').textContent = slide.title;
+
+            // 우측 플로팅 미니 카드 2종 (p01_01.jpg, p01_02.jpg)
+            document.getElementById('mini-card-hex').innerHTML =
+                createRealPhotoImg('p01_01.jpg', '핵스타일 보행로 실사', 'w-full h-full object-cover', true);
+            document.getElementById('mini-card-play').innerHTML =
+                createRealPhotoImg('p01_02.jpg', '유선형 컬러 놀이터 실사', 'w-full h-full object-cover', true);
+
+            // 브랜드 스토리 미니 실사 2종 (p03_05.jpg, p03_06.jpg)
+            document.getElementById('about-photo-1').innerHTML =
+                createRealPhotoImg('p03_05.jpg', '공원 산책로 탄성포장 실사', 'w-full h-full object-cover', true);
+            document.getElementById('about-photo-2').innerHTML =
+                createRealPhotoImg('p03_06.jpg', '생활도로 스텐실 시공 실사', 'w-full h-full object-cover', true);
+
+            // 4대 제품 탭 대표 실사 슬롯 (p07_09.jpg, p10_19.jpg, p13_29.jpg, p16_40.jpg)
+            document.getElementById('prod1-real-photo').innerHTML =
+                createRealPhotoImg('p07_09.jpg', '학교 정문 무지개 아치 미끄럼방지 포장 실사 (p07_09.jpg)');
+            document.getElementById('prod2-real-photo').innerHTML =
+                createRealPhotoImg('p10_19.jpg', '어린이보호구역 해님 스텐실 시공 실사 (p10_19.jpg)');
+            document.getElementById('prod3-real-photo').innerHTML =
+                createRealPhotoImg('p13_29.jpg', '원형 테마 광장 스탬프 시공 실사 (p13_29.jpg)');
+            document.getElementById('prod4-real-photo').innerHTML =
+                createRealPhotoImg('p16_40.jpg', '어린이놀이터 유선형 탄성포장재 실사 (p16_40.jpg)');
+
+            // 도트 인디케이터 갱신
+            const dots = document.getElementById('hero-slide-dots').children;
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = i === currentHeroIdx
+                    ? 'w-5 h-2.5 rounded-full bg-core-sage transition-all'
+                    : 'w-2.5 h-2.5 rounded-full bg-core-sage/30 transition-all';
+            }
+        }
+
+        function setHeroSlide(idx) {
+            currentHeroIdx = idx;
+            renderHeroVisuals();
+        }
+        function nextHeroSlide() {
+            currentHeroIdx = (currentHeroIdx + 1) % heroSlides.length;
+            renderHeroVisuals();
+        }
+        function prevHeroSlide() {
+            currentHeroIdx = (currentHeroIdx - 1 + heroSlides.length) % heroSlides.length;
+            renderHeroVisuals();
+        }
+
+        // ================= 3. 카달로그 실제 파일명 1:1 매핑 12대 실사 시공사례 =================
+        const portfolioItems = [
+            {
+                id: 0,
+                filename: 'p10_19.jpg',
+                category: 'school',
+                tag: '어린이보호구역 · 스텐실',
+                title: '유치원·초등학교 앞 해님 브릭 스쿨존',
+                spec: 'PAVE-04 · 스텐실 3T (브릭 패턴)',
+                desc: '유치원·초등학교 주통학로에 따뜻한 옐로우 브릭 스텐실과 해님 웃음 캐릭터 그래픽을 시공하여 운전자 감속 유도와 어린이 보행 안전을 확보한 현장입니다.'
+            },
+            {
+                id: 1,
+                filename: 'p07_09.jpg',
+                category: 'school',
+                tag: '어린이보호구역 · 도로',
+                title: '학교 정문 진입부 무지개 아치 안전존',
+                spec: 'PAVE-06 · 미끄럼방지 포장재 4T',
+                desc: '통학 차량과 어린이 보행 동선이 만나는 학교 정문 전면에 다채로운 무지개 컬러존을 조성하여 운전자의 즉각적인 시선 집중과 서행을 유도합니다.'
+            },
+            {
+                id: 2,
+                filename: 'p09_14.jpg',
+                category: 'school',
+                tag: '교통안전 · 버스정류장',
+                title: '교차로·버스정류장 고시인성 미끄럼방지',
+                spec: 'PAVE-03 · 미끄럼방지 포장재 3T',
+                desc: '차량 정차 및 회전이 잦은 버스정류장과 진출입로 노면에 고경도 규사와 친환경 MMA 수지를 시공하여 제동거리 단축 및 미끄럼 사고를 예방합니다.'
+            },
+            {
+                id: 3,
+                filename: 'p09_15.jpg',
+                category: 'school',
+                tag: '산책로·자전거도로',
+                title: '수변 산책로·자전거도로 분리형 포장',
+                spec: 'PAVE-03 · 미끄럼방지 포장재 3T',
+                desc: '레드 자전거도로와 그린 보행자 산책로를 선명한 컬러로 구분 시공하여 보행자와 자전거 이용자 모두 안전한 주행 환경을 구축했습니다.'
+            },
+            {
+                id: 4,
+                filename: 'p13_29.jpg',
+                category: 'stencil',
+                tag: '테마거리 · 스탬프',
+                title: '마을 커뮤니티 원형 광장 입체 스탬프',
+                spec: 'PAVE-05 · 입체 스탬프 3T',
+                desc: '생활도로 교차점의 회색 아스팔트 위에 블루·옐로우 동심원 테마 디자인과 스탬프 각인 공법을 적용하여 지역의 랜드마크 공간으로 탈바꿈시켰습니다.'
+            },
+            {
+                id: 5,
+                filename: 'p12_25.jpg',
+                category: 'stencil',
+                tag: '보행로 · 핵스타일',
+                title: '도심 보행자·자전거 전용 핵스타일 도로',
+                spec: 'PAVE-04 · 스텐실 3T (핵스타일)',
+                desc: '그린 보행로와 코랄 레드 자전거도로를 명확히 분리하고 기하학 육각 패턴을 시공하여 시인성과 미끄럼 저항력을 극대화했습니다.'
+            },
+            {
+                id: 6,
+                filename: 'p12_23.jpg',
+                category: 'stencil',
+                tag: '수변 산책로 · 자연석',
+                title: '하천변 수변 산책로 자연석 스텐실',
+                spec: 'PAVE-04 · 스텐실 3T (자연석 패턴)',
+                desc: '자연 경관과 조화를 이루는 차분한 그레이 톤의 부정형 자연석 패턴을 시공하여 산책 시민들에게 쾌적하고 미끄럼 없는 보행 환경을 제공합니다.'
+            },
+            {
+                id: 7,
+                filename: 'p14_31.jpg',
+                category: 'stencil',
+                tag: '해안·수변도로 · 스탬프',
+                title: '수변공원 자전거·보행 겸용 스탬프 길',
+                spec: 'PAVE-05 · 입체 스탬프 3T (브릭)',
+                desc: '테라코타 레드와 샌드 옐로우 컬러의 입체 스탬프 포장으로 해풍과 자외선에도 탈색·변색 없이 오랜 수명을 유지하는 친환경 산책로입니다.'
+            },
+            {
+                id: 8,
+                filename: 'p16_40.jpg',
+                category: 'playground',
+                tag: '어린이놀이터 · 탄성포장재',
+                title: '유선형 마운딩 언덕 놀이터 탄성포장',
+                spec: 'SPS-KSSFIA1-1944 · EPDM 50~75mm',
+                desc: '중금속 18종 및 VOCs가 검출되지 않는 친환경 EPDM 칼라칩을 사용하여 입체 언덕 슬라이드와 트램펄린 주변에 풍부한 충격흡수 탄성바닥재를 포설했습니다.'
+            },
+            {
+                id: 9,
+                filename: 'p01_02.jpg',
+                category: 'playground',
+                tag: '단지 테마놀이터 · EPDM',
+                title: '아파트 단지 해양 테마 놀이터 탄성포장',
+                spec: 'SPS-KSSFIA1-1944 · EPDM 55~75mm',
+                desc: '스카이 블루와 옐로우 유선형 패턴의 무독성 EPDM 탄성포장재를 시공하여 아이들이 안전하고 즐겁게 뛰어놀 수 있는 쾌적한 놀이 환경을 조성했습니다.'
+            },
+            {
+                id: 10,
+                filename: 'p01_03.jpg',
+                category: 'playground',
+                tag: '유아놀이터 · 탄성포장재',
+                title: '어린이 놀이동산 트랙형 탄성바닥재',
+                spec: 'SPS-KSSFIA1-1944 · EPDM 50mm',
+                desc: '부드러운 곡선 트랙과 파스텔 그린·옐로우 컬러 매칭으로 인체 피로감을 줄여주고 미끄럼방지 효과(40BPN 이상)가 뛰어난 친환경 바닥재입니다.'
+            },
+            {
+                id: 11,
+                filename: 'p19_46.jpg',
+                category: 'playground',
+                tag: '공원 놀이터 · 복합탄성',
+                title: '근린공원 모험놀이터 구릉지 탄성포장',
+                spec: 'SPS-KSSFIA1-1944 · EPDM 75mm',
+                desc: '경사면과 네트 놀이시설 하부에 고탄성 충격흡수층을 정밀 시공하여 한계하강높이 기준을 충족하고 사계절 내후성이 뛰어난 시공사례입니다.'
+            }
+        ];
+
+        let activeGalleryFilter = 'all';
+        let activeLightboxItem = null;
+
+        function renderPortfolioGrid() {
+            const grid = document.getElementById('portfolio-grid');
+            const filtered = activeGalleryFilter === 'all'
+                ? portfolioItems
+                : portfolioItems.filter(item => item.category === activeGalleryFilter);
+
+            grid.innerHTML = filtered.map(item => `
+                <article onclick="openLightbox(${item.id})" class="group cursor-pointer bg-white rounded-[28px] overflow-hidden border border-core-border shadow-soft hover:shadow-soft-lg hover:-translate-y-1.5 transition duration-300 flex flex-col">
+                    <div class="relative h-52 overflow-hidden bg-core-sageLight">
+                        ${createRealPhotoImg(item.filename, item.title, 'w-full h-full object-cover group-hover:scale-105 transition duration-500')}
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/92 backdrop-blur-xs text-core-sage text-[11px] font-bold shadow-xs">
+                            ${item.tag}
+                        </span>
+                        <span class="absolute bottom-3 left-3 px-2.5 py-0.5 rounded-full bg-core-charcoal/70 text-white text-[10px] font-medium">
+                            ${item.filename}
+                        </span>
+                        <span class="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-core-charcoal/75 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                            <i class="fa-solid fa-expand text-xs"></i>
+                        </span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h4 class="font-serif font-bold text-core-charcoal text-base group-hover:text-core-sage transition line-clamp-1">${item.title}</h4>
+                            <p class="text-xs text-core-muted mt-1.5 line-clamp-2 leading-relaxed">${item.desc}</p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-core-border/70 flex items-center justify-between text-[11px]">
+                            <span class="font-semibold text-[#9A6728]">${item.spec}</span>
+                            <span class="font-bold text-core-sage">확대보기 <i class="fa-solid fa-arrow-right text-[9px]"></i></span>
+                        </div>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        function filterGallery(cat, btnEl) {
+            activeGalleryFilter = cat;
+            document.querySelectorAll('.gal-filter-btn').forEach(b => {
+                b.classList.remove('bg-core-sage', 'text-white', 'shadow-xs', 'active');
+                b.classList.add('bg-white', 'text-core-muted', 'border', 'border-core-border');
+            });
+            btnEl.classList.add('bg-core-sage', 'text-white', 'shadow-xs', 'active');
+            btnEl.classList.remove('bg-white', 'text-core-muted', 'border', 'border-core-border');
+            renderPortfolioGrid();
+        }
+
+        // ================= 4. Before & After 실사 슬라이더 로직 =================
+        let currentBaScene = 'school';
+
+        function renderBaLayers() {
+            const afterEl = document.getElementById('ba-after-layer');
+            if (currentBaScene === 'school') {
+                afterEl.innerHTML = createRealPhotoImg('p01_04.jpg', '유치원·초등학교 앞 해님 브릭 스텐실 시공 후 실사 (p01_04.jpg)');
+            } else {
+                afterEl.innerHTML = createRealPhotoImg('p16_40.jpg', '어린이놀이터 유선형 탄성포장재 시공 후 실사 (p16_40.jpg)');
+            }
+        }
+
+        function switchBaScene(scene) {
+            currentBaScene = scene;
+            const btnSchool = document.getElementById('ba-btn-school');
+            const btnPlay = document.getElementById('ba-btn-playground');
+            if (scene === 'school') {
+                btnSchool.className = 'ba-scene-btn px-4 py-2 rounded-full text-xs font-bold bg-core-sage text-white transition';
+                btnPlay.className = 'ba-scene-btn px-4 py-2 rounded-full text-xs font-bold bg-core-bgSub text-core-muted hover:text-core-charcoal transition';
+            } else {
+                btnPlay.className = 'ba-scene-btn px-4 py-2 rounded-full text-xs font-bold bg-core-sage text-white transition';
+                btnSchool.className = 'ba-scene-btn px-4 py-2 rounded-full text-xs font-bold bg-core-bgSub text-core-muted hover:text-core-charcoal transition';
+            }
+            renderBaLayers();
+        }
+
+        const baStage = document.getElementById('ba-stage');
+        const baBefore = document.getElementById('ba-before-layer');
+        const baHandle = document.getElementById('ba-handle');
+        let isBaDragging = false;
+
+        function updateBaPosition(clientX) {
+            if (!baStage || !baBefore || !baHandle) return;
+            const rect = baStage.getBoundingClientRect();
+            let pct = ((clientX - rect.left) / rect.width) * 100;
+            pct = Math.max(5, Math.min(95, pct));
+            baBefore.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+            baHandle.style.left = `${pct}%`;
+        }
+
+        if (baStage) {
+            baStage.addEventListener('mousedown', (e) => { isBaDragging = true; updateBaPosition(e.clientX); });
+            window.addEventListener('mousemove', (e) => { if (isBaDragging) updateBaPosition(e.clientX); });
+            window.addEventListener('mouseup', () => { isBaDragging = false; });
+            baStage.addEventListener('touchstart', (e) => { isBaDragging = true; updateBaPosition(e.touches[0].clientX); }, { passive: true });
+            baStage.addEventListener('touchmove', (e) => { if (isBaDragging) updateBaPosition(e.touches[0].clientX); }, { passive: true });
+            baStage.addEventListener('touchend', () => { isBaDragging = false; });
+        }
+
+        // ================= 5. 라이트박스 뷰어 =================
+        function openLightbox(id) {
+            const item = portfolioItems.find(p => p.id === id);
+            if (!item) return;
+            activeLightboxItem = item;
+            const visContainer = document.getElementById('lb-visual-container');
+            if (visContainer) {
+                visContainer.innerHTML = createRealPhotoImg(item.filename, item.title, 'w-full h-full object-cover');
+            }
+            const tagEl = document.getElementById('lb-tag');
+            const specEl = document.getElementById('lb-spec');
+            const titleEl = document.getElementById('lb-title');
+            const descEl = document.getElementById('lb-desc');
+            const fileEl = document.getElementById('lb-filename-info');
+            if (tagEl) tagEl.textContent = item.tag;
+            if (specEl) specEl.textContent = item.spec;
+            if (titleEl) titleEl.textContent = item.title;
+            if (descEl) descEl.textContent = item.desc;
+            if (fileEl) fileEl.textContent = `카달로그 실사 파일: ${item.filename}`;
+
+            const modal = document.getElementById('lightbox-modal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+        }
+
+        function closeLightbox() {
+            const modal = document.getElementById('lightbox-modal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+
+        function inquireFromLightbox() {
+            if (!activeLightboxItem) return;
+            closeLightbox();
+            const msgInput = document.getElementById('inq-message');
+            if (msgInput) {
+                msgInput.value = `[실사 시공사례 참고 문의]\n• 참고 사례: ${activeLightboxItem.title} (${activeLightboxItem.spec} / ${activeLightboxItem.filename})\n\n유사 현장 시공 단가 및 설계 자료 상담을 요청합니다.`;
+            }
+            const contactSec = document.getElementById('contact');
+            if (contactSec) contactSec.scrollIntoView({ behavior: 'smooth' });
+            showToast('선택하신 시공사례 정보가 문의 폼에 반영되었습니다.');
+        }
+
+        const lightboxModalEl = document.getElementById('lightbox-modal');
+        if (lightboxModalEl) {
+            lightboxModalEl.addEventListener('click', (e) => {
+                if (e.target.id === 'lightbox-modal') closeLightbox();
+            });
+        }
+
+        function refreshAllRealPhotos() {
+            renderHeroVisuals();
+            renderBaLayers();
+            renderPortfolioGrid();
+        }
+
+        // ================= 6. 일반 UI 인터랙션 (스크롤 리빌, 제품 탭, 패턴, 한계하강높이, 견적 계산기, 인증서) =================
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        function switchProductTab(prodId) {
+            document.querySelectorAll('.prod-panel').forEach(panel => panel.classList.add('hidden'));
+            document.querySelectorAll('.prod-tab').forEach(btn => {
+                btn.classList.remove('bg-core-sage', 'text-white', 'shadow-soft', 'active');
+                btn.classList.add('bg-core-bgSub', 'text-core-muted', 'border', 'border-core-border/80');
+            });
+            document.getElementById('panel-' + prodId).classList.remove('hidden');
+            const activeBtn = document.getElementById('tab-' + prodId);
+            activeBtn.classList.add('bg-core-sage', 'text-white', 'shadow-soft', 'active');
+            activeBtn.classList.remove('bg-core-bgSub', 'text-core-muted', 'border', 'border-core-border/80');
+        }
+
+        function selectPattern(name, desc, btnEl) {
+            document.querySelectorAll('.pattern-card').forEach(card => card.classList.remove('active'));
+            if (btnEl) btnEl.classList.add('active');
+            document.getElementById('selected-pattern-name').textContent = name;
+            document.getElementById('selected-pattern-desc').textContent = desc;
+        }
+
+        const hicData = {
+            50: { height: '약 1.5M', desc: 'EPDM 표층 15mm + 보조탄성층 35mm 구성. 보행로 및 저높이 유아 놀이기구 구역에 적합합니다.' },
+            55: { height: '약 1.8M', desc: 'EPDM 표층 15mm + 보조탄성층 40mm 구성. 표준 어린이놀이터 조합놀이대 안전 구역에 권장됩니다.' },
+            75: { height: '약 2.8M', desc: 'EPDM 표층 15mm + 보조탄성층 60mm 구성. 그네, 시소, 중형 미끄럼틀 등 활동성이 큰 구역에 적합합니다.' },
+            95: { height: '약 4.0M', desc: 'EPDM 표층 15mm + 보조탄성층 80mm 구성. 대형 조합놀이대, 고공 놀이기구 등 높은 낙하 충격 흡수가 필요한 구역에 최적입니다.' }
+        };
+
+        function selectThickness(thick) {
+            [50, 55, 75, 95].forEach(t => {
+                const bar = document.getElementById('bar-' + t);
+                const btn = document.querySelector(`.thick-btn[data-thick="${t}"]`);
+                if (t === thick) {
+                    bar.classList.remove('bg-core-sageMist'); bar.classList.add('bg-core-sage');
+                    btn.classList.remove('bg-white', 'text-core-charcoal', 'border', 'border-core-border');
+                    btn.classList.add('bg-core-sage', 'text-white');
+                } else {
+                    bar.classList.add('bg-core-sageMist'); bar.classList.remove('bg-core-sage');
+                    btn.classList.add('bg-white', 'text-core-charcoal', 'border', 'border-core-border');
+                    btn.classList.remove('bg-core-sage', 'text-white');
+                }
+            });
+            document.getElementById('hic-thickness-label').textContent = `총 두께 ${thick}mm`;
+            document.getElementById('hic-height-label').textContent = `한계하강높이: ${hicData[thick].height}`;
+            document.getElementById('hic-desc-label').textContent = hicData[thick].desc;
+        }
+
+        function syncAreaFromSlider(val) {
+            document.getElementById('calc-area').value = val;
+            calculateEstimate();
+        }
+        function syncAreaFromInput(val) {
+            const num = Math.max(0, parseFloat(val) || 0);
+            document.getElementById('calc-area-slider').value = Math.min(2000, Math.max(10, num));
+            calculateEstimate();
+        }
+        function calculateEstimate() {
+            const selectEl = document.getElementById('calc-model');
+            const unitPrice = parseInt(selectEl.value, 10) || 0;
+            const area = Math.max(0, parseFloat(document.getElementById('calc-area').value) || 0);
+            const total = Math.round(unitPrice * area);
+            const saving = Math.round(total / 3);
+            const pyeong = (area * 0.3025).toFixed(1);
+
+            document.getElementById('calc-unit-price').textContent = `${unitPrice.toLocaleString()} 원 / ㎡`;
+            document.getElementById('calc-pyeong-badge').textContent = `약 ${pyeong}평`;
+            document.getElementById('calc-saving-price').textContent = `약 ${saving.toLocaleString()} 원 절감`;
+            document.getElementById('calc-total-price').textContent = total.toLocaleString();
+        }
+        function selectCalcModel(g2bCode) {
+            const selectEl = document.getElementById('calc-model');
+            for (let i = 0; i < selectEl.options.length; i++) {
+                if (selectEl.options[i].dataset.g2b === g2bCode) {
+                    selectEl.selectedIndex = i;
+                    break;
+                }
+            }
+            calculateEstimate();
+            showToast(`나라장터 식별번호 [${g2bCode}] 모델이 선택되었습니다.`);
+        }
+        function applyEstimateToContact() {
+            const selectEl = document.getElementById('calc-model');
+            const opt = selectEl.options[selectEl.selectedIndex];
+            const area = document.getElementById('calc-area').value;
+            const totalText = document.getElementById('calc-total-price').textContent;
+
+            document.getElementById('inq-area').value = `${area}㎡`;
+            document.getElementById('inq-message').value = `[나라장터 견적 연동 문의]\n• 선택 모델: ${opt.dataset.name} (G2B: ${opt.dataset.g2b})\n• 시공 예정 면적: ${area}㎡\n• 예상 산출 금액: ${totalText}원\n\n상세 견적서 및 시방서 상담을 요청합니다.`;
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            showToast('계산된 견적 내용이 상담 신청서에 반영되었습니다.');
+        }
+
+        const certDetails = {
+            biz: {
+                issuer: '국세청 · 춘천세무서장',
+                title: '사업자등록증 (법인사업자)',
+                imageFile: 'image_7a45e1.jpg',
+                fallbackKey: 'p05_07.jpg',
+                badge: '법인사업자 등록필',
+                rows: [
+                    ['등록번호', '734-86-03064'],
+                    ['법인등록번호', '154511-0107791'],
+                    ['법인명(단체명)', '주식회사 페이브'],
+                    ['대표자', '박정남'],
+                    ['개업연월일', '2023년 03월 08일 (발급일: 2025.01.03)'],
+                    ['사업장·본점 소재지', '강원특별자치도 화천군 하남면 공단길 80-40 (원천농공단지 내)'],
+                    ['업태 / 종목', '제조업(탄성포장재, 미끄럼방지포장재, 도료) / 건설업(도장공사업, 포장공사업, 습식방수공사업)']
+                ]
+            },
+            factory: {
+                issuer: '한국산업단지공단 이사장',
+                title: '공장등록증명(신청)서',
+                imageFile: 'image_7a4606.jpg',
+                badge: '공장관리번호 413602023022248',
+                rows: [
+                    ['문서확인번호', '1740-5085-8167-9506'],
+                    ['회사명 / 대표자', '주식회사 페이브 / 박정남'],
+                    ['공장 소재지', '경기도 남양주시 화도읍 비룡로379번길 19-7, 1동 1호'],
+                    ['공장 등록일', '2023년 06월 19일 (발급일: 2025.02.26)'],
+                    ['공장의 업종(분류번호)', '합성수지 및 기타 플라스틱 물질 제조업 (20202)'],
+                    ['공장 면적', '부지 1,637.000㎡ / 제조시설 135.000㎡ / 부대시설 30.000㎡']
+                ]
+            },
+            sme: {
+                issuer: '중소벤처기업부장관',
+                title: '중소기업 확인서 [소기업(소상공인)]',
+                imageFile: 'image_7a463e.png',
+                badge: '공공기관 입찰용',
+                rows: [
+                    ['발급번호', '0010-2025-37577'],
+                    ['기업명 / 대표자', '주식회사 페이브 / 박정남'],
+                    ['사업자 · 법인번호', '734-86-03064 / 154511-0107791'],
+                    ['주소', '강원특별자치도 화천군 하남면 공단길 80-40 (원천농공단지 내)'],
+                    ['유효기간 · 발급일', '2024-04-01 ~ 2025-03-31 (발급일: 2025년 02월 10일)'],
+                    ['확인 내용', '중소기업기본법 제2조 및 소상공인기본법 제2조에 의한 소기업(소상공인)']
+                ]
+            },
+            sps1: {
+                issuer: '도로교통안전기술협회장',
+                title: '단체표준인증서 (미끄럼방지 포장재)',
+                imageFile: 'image_7a4665.png',
+                badge: '1종 1급 인증',
+                rows: [
+                    ['인증번호', '제 24-433 호'],
+                    ['업체명 / 대표자', '주식회사 페이브 / 박정남'],
+                    ['공장 소재지', '경기도 남양주시 화도읍 비룡로379번길 19-7 1동 1호'],
+                    ['단체표준명 · 번호', '미끄럼방지 포장재 (SPS-F KTS-1102-1890 / 1종 1급)'],
+                    ['인증계약 유효기간', '2024.09.19 ~ 2027.09.18'],
+                    ['문서확인번호', '0156-2552-0257-9255']
+                ]
+            },
+            sps2: {
+                issuer: '한국체육시설공업협회 · 전문건설업',
+                title: '단체표준인증서(탄성포장재) 및 도장공사업 면허',
+                imageFile: null,
+                badge: '나라장터 등록 완료',
+                rows: [
+                    ['단체표준명', '어린이놀이시설용 현장포설형 충격흡수바닥재'],
+                    ['단체표준번호', 'SPS-KSSFIA1-1944 (한국체육시설공업협회, 2025.03 인증)'],
+                    ['조달청 나라장터', '2025.05 어린이놀이시설 탄성포장재 종합쇼핑몰 등록 완료'],
+                    ['품질·안전기준', '인장강도 0.6MPa↑, 신장률 60%↑, 미끄럼저항 40BPN↑, 중금속 18종·VOCs 무검출'],
+                    ['보유 건설업 면허', '전문건설업 면허등록 - 주력분야: 도장공사업 (2023.04 등록)']
+                ]
+            }
+        };
+
+        let activeCertKey = 'biz';
+        let certZoomLevel = 1;
+
+        function getCertImageSrc(data) {
+            if (!data || !data.imageFile) return null;
+            return `${GITHUB_RAW_ROOT}${data.imageFile}`;
+        }
+
+        function setCertZoom(level) {
+            certZoomLevel = level;
+            const wrap = document.getElementById('cert-doc-image-wrap');
+            const btn100 = document.getElementById('cert-zoom-100');
+            const btn150 = document.getElementById('cert-zoom-150');
+
+            if (level > 1) {
+                wrap.style.width = '155%';
+                btn150.className = 'px-2.5 py-1 rounded-full text-[11px] font-bold bg-core-sage text-white transition';
+                btn100.className = 'px-2.5 py-1 rounded-full text-[11px] font-bold bg-core-bgSub text-core-charcoal hover:bg-core-sageLight transition';
+            } else {
+                wrap.style.width = '100%';
+                btn100.className = 'px-2.5 py-1 rounded-full text-[11px] font-bold bg-core-sage text-white transition';
+                btn150.className = 'px-2.5 py-1 rounded-full text-[11px] font-bold bg-core-bgSub text-core-charcoal hover:bg-core-sageLight transition';
+            }
+        }
+
+        function replaceCurrentCertImage(fileList) {
+            const file = fileList && fileList[0];
+            if (!file || !file.type.startsWith('image/')) return;
+            customCertBlobMap[activeCertKey] = URL.createObjectURL(file);
+            openCertModal(activeCertKey);
+            showToast(`'${certDetails[activeCertKey].title}' 원본 이미지가 업데이트되었습니다.`);
+        }
+
+        function openCertModal(key) {
+            const data = certDetails[key];
+            if (!data) return;
+            activeCertKey = key;
+
+            // 상단 탭 활성 상태 갱신
+            document.querySelectorAll('.cert-switch-tab').forEach(tab => {
+                if (tab.dataset.certTab === key) {
+                    tab.className = 'cert-switch-tab px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap bg-core-sage text-white shadow-2xs transition';
+                } else {
+                    tab.className = 'cert-switch-tab px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap bg-white text-core-muted hover:text-core-charcoal border border-core-border transition';
+                }
+            });
+
+            document.getElementById('modal-cert-issuer').textContent = data.issuer;
+            document.getElementById('modal-cert-title').textContent = data.title;
+            document.getElementById('cert-doc-badge').textContent = data.badge || '원본 대조필';
+
+            const viewerCol = document.getElementById('cert-doc-viewer-col');
+            const infoCol = document.getElementById('cert-doc-info-col');
+            const imgSrc = getCertImageSrc(data);
+
+            if (imgSrc) {
+                viewerCol.classList.remove('hidden');
+                infoCol.className = 'lg:col-span-5 space-y-4';
+                document.getElementById('cert-doc-filename').innerHTML =
+                    `<i class="fa-regular fa-file-image text-core-sage"></i><span>원본 스캔 문서 (${data.imageFile})</span>`;
+
+                const fallbackCard = encodeURIComponent(`
+                    <div class="bg-white rounded-xl p-8 text-center border border-core-border space-y-2">
+                        <i class="fa-solid fa-file-shield text-3xl text-core-sage"></i>
+                        <p class="font-serif font-bold text-core-charcoal text-base">${data.title}</p>
+                        <p class="text-xs text-core-muted">파일명: ${data.imageFile}</p>
+                        <p class="text-[11px] text-core-sage">공식 확인 기재사항 요약표에서 세부 등록번호를 확인하실 수 있습니다.</p>
+                    </div>
+                `);
+
+                document.getElementById('cert-doc-image-wrap').innerHTML = `
+                    <img src="${imgSrc}" alt="${data.title}" class="w-full h-auto rounded-xl shadow-md bg-white border border-core-border/80"
+                         onerror="handlePhotoError(this, '${data.imageFile}', '${fallbackCard}')">
+                `;
+                setCertZoom(1);
+            } else {
+                // 5번째 항목(탄성포장재 인증 & 전문건설면허)은 우측 기재사항 중심으로 넓게 표시
+                viewerCol.classList.add('hidden');
+                infoCol.className = 'lg:col-span-12 space-y-4';
+            }
+
+            document.getElementById('modal-cert-body').innerHTML = data.rows.map(([label, val]) => `
+                <div class="grid grid-cols-3 gap-2 py-2.5 border-b border-core-border/60 last:border-none">
+                    <span class="font-semibold text-core-muted text-xs">${label}</span>
+                    <span class="col-span-2 font-semibold text-core-charcoal text-xs leading-relaxed">${val}</span>
+                </div>
+            `).join('');
+
+            const modal = document.getElementById('cert-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+        function closeCertModal() {
+            const modal = document.getElementById('cert-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+        document.getElementById('cert-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'cert-modal') closeCertModal();
+        });
+
+        function copyEmail() {
+            const tempInput = document.createElement('input');
+            tempInput.value = 'pave-@naver.com';
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            showToast('이메일 주소(pave-@naver.com)가 복사되었습니다.');
+        }
+
+        function handleInquirySubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('inq-name').value;
+            showToast(`${name}님의 견적·상담 문의가 접수되었습니다. 빠르게 연락드리겠습니다.`);
+            e.target.reset();
+        }
+
+        let toastTimer = null;
+        function showToast(msg) {
+            const toast = document.getElementById('toast-box');
+            document.getElementById('toast-message').textContent = msg;
+            toast.classList.remove('hidden');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => toast.classList.add('hidden'), 3800);
+        }
+
+        // 초기 렌더링 실행
+        refreshAllRealPhotos();
+        calculateEstimate();
+    </script>
+</body>
+</html>
